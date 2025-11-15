@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+<meta charset="UTF-8" >
+<meta http-equiv="X-UA-Compatible" content="IE=edge" >
+<meta name="viewport" 
+        content="width=device-width, 
+                initial-scale=1.0, 
+                minimum-scale=1.0, 
+                maximum-scale=5.0, 
+                user-scalable=yes" >
+<meta name="description" content="설명 입력">
+<title>상속</title>
+<style>
+    div{
+        /* 상속되는 속성 */
+        color: red;
+        font-size: 24px;
+        font-weight: 900;
+
+        /* 상속되지 않는 속성. border를 포함한 layout 속성은 상속되지 않는다. */
+        border: 5px solid black;
+    }
+
+    p { 
+        /* 직접 작성된 style 특성은 상속값보다 우선순위가 높다.*/
+        color: lightgreen;
+
+        /*상속되지 않는 속성 강제 - inherit */
+        border: inherit;
+
+        /* CSS 자체 명세서에 작성된 초기값으로  */
+        /* font-size: initial; */
+
+        /* 자연적으로 상속되는 속성이면 inherit처럼, 아니면 initial처럼 작동 */
+        font-weight: unset;
+        border: unset;
+
+        /* 모든 CSS 속성을 한번에 조작 */
+        all: initial;
+
+        /* all 속성 뒤에 작성한 CSS는 그대로 적용된다. */
+        color: orange;
+    }
+
+    h2 {
+        /* reset.css로 가정 */
+        font-size: 10px;
+
+        /* 브라우저의 기본 스타일로 변경 */
+        font-size: revert; 
+    }
+</style>
+</head>
+<body>
+    <div>할머니
+        <p>엄마 <br>
+            <h2>딸</h2>
+    </div>
+</body>
+</html>

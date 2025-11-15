@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+<meta charset="UTF-8" >
+<meta http-equiv="X-UA-Compatible" content="IE=edge" >
+<meta name="viewport" 
+        content="width=device-width, 
+                initial-scale=1.0, 
+                minimum-scale=1.0, 
+                maximum-scale=5.0, 
+                user-scalable=yes" >
+<meta name="description" content="설명 입력">
+<title>selector</title>
+
+<style>
+    /* 애스터리스크: 전체 선택 */
+    /* 상속되지 않는 속성은 전체선택자, 상속되는 속성은 body 최상위에 적용 */
+    /* 패아지로드에 영향 미칠 수 있음. */
+    * {
+        /* 브라우져 기본 스타일 초기화 */
+        /* 에이전트 스타일:  */
+        margin:0;
+    }
+
+    /* 태그선택자 */
+    /* 공통된 스타일을 지정할 때 사용 */
+    h2 {
+        color: lightblue;
+    }
+
+    /* 아이디 선택자*/
+    /* 스타일 적용 시에는 id가 아닌 class 선택자 사용 */
+    /* 기능-UI요소, UI요소-기능 */
+    #content {
+        color: red;
+    }
+
+    .font-blue {
+        color: blue;
+    }
+
+    .bg-yellow {
+        background-color: yellow;
+    }
+
+    /* 속성 선택자 */
+    /* 해당 속성 유무 */
+    [type] {
+        border: 10px solid greenyellow;
+    }
+    [id] {
+        background-color: lightpink;
+    }
+    /* 해당 속성에 해당 값 유무 */
+    [class="font-blue"] {
+        border: solid 5px skyblue;
+    }
+    /* 해당 속성 값 포함 유무 */
+    [class*="font-blue"] {
+        background-color: greenyellow;
+    }
+
+    /* 그룹 선택자 */
+    section, div, #content, .font-blue {
+        color: red;
+    }
+
+</style>
+
+</head>
+<body>
+    <!-- id, class명 작성규칙 -->
+    <!-- 1. 숫자로 시작하면 안된다.  -->
+    <!-- 2. -,_,문자로만 시작할 수 있다. -->
+    <section>
+        <h2>chaptor 10</h2>
+        <h3>선택자 기초</h3>
+        <!-- 띄어쓰기로 구분 -->
+        <p class="font-blue bg-yellow">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae sint provident iure reiciendis quos, obcaecati aut nobis est quas incidunt ab nostrum, perspiciatis deserunt voluptas officia facere voluptatum! Similique, distinctio.
+        </p>
+    </section>
+
+    <!-- 해시링크: 같은 페이지 네에서 특정 위치로 스크롤 이동을 할 때 사용 -->
+    <a href="#content">해시링크</a>
+    <button type="button">버튼1</button>
+    <button type="submit">버튼2</button>
+    <button>버튼3</button>
+
+    <section>
+        <h2>chaptor 12</h2>
+    </section>
+
+    <div id="content" class="font-blue">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore non, molestiae quae adipisci explicabo possimus perferendis aliquid ratione eum consequuntur eius molestias commodi rem, dignissimos deserunt accusamus architecto unde reprehenderit?
+    </div>
+
+</body>
+</html>

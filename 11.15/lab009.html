@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+<meta charset="UTF-8" >
+<meta http-equiv="X-UA-Compatible" content="IE=edge" >
+<meta name="viewport" 
+        content="width=device-width, 
+                initial-scale=1.0, 
+                minimum-scale=1.0, 
+                maximum-scale=5.0, 
+                user-scalable=yes" >
+<meta name="description" content="설명 입력">
+<title>css priority</title>
+<style>
+    /* 후자 우선의 원칙 (동일한 가중치 내) */
+        p {
+            color: rosybrown;
+        }
+        p {
+            color: royalblue;
+        }
+        p {
+            color: red;
+        }
+
+    /* 구체성의 원칙 */
+        /* 가중치가 높을 수록 구체적이다. */
+        /* id - class - type 하위는 상위가 존재하면 무의미하다.  */
+        /* 상속된 값은 기본값 취급이라 하위 구체적 명시가 있으면 의미가 없다.(후자우선)  */
+        /* in-line  : 1000 */
+        /* id(#)    : 100 */
+        /* class(.) : 10 */
+        /* 타입, 가상 : 1점 */
+        /* 전체(*)   : 0점*/
+        
+        /* 타입 1점 */
+        p {
+            color: green;
+        }
+
+        /* 클래스 10점 */
+        .text {
+            color: orange;
+        }
+
+        /* class 2개 20점 */
+        .text-cont .text {
+            color: salmon;
+        }
+
+        /* 상속되는값..0점 */
+        #container {
+            color: purple;
+        }
+
+        /* 110점 */
+        #container .text {
+            color:  teal;
+        }
+
+    /* 중요성의 원리 */
+        /* !important 가 있는 선언이 우선된다. */
+
+    /* 서열
+    1. 중요성의 원리
+    2. 구체성의 원리
+        id - class - type 
+    3. 후자 우선의 원칙
+    
+    
+    */
+</style>
+</head>
+<body>
+    <p>hellow world</p>
+    <div id="container" class="text-cont">
+        <p class="text">Hellow world</p>
+    </div>
+</body>
+</html>

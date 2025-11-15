@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+<meta charset="UTF-8" >
+<meta http-equiv="X-UA-Compatible" content="IE=edge" >
+<meta name="viewport" 
+        content="width=device-width, 
+                initial-scale=1.0, 
+                minimum-scale=1.0, 
+                maximum-scale=5.0, 
+                user-scalable=yes" >
+<meta name="description" content="설명 입력">
+<title>복합 선택자</title>
+<style>
+    /* 자손 선택자: 공백 */
+    section p {
+        background-color: yellow;
+    }
+
+    /* 자식 선택자: > , 1뎁스만. */
+    section > p {
+        border: solid 5px salmon;
+    }
+
+    /* 후속 형제 선택자: ~ , 후속 형제*/
+    section p {
+        background-color: lightblue;
+    }
+
+    /* 인접 형제 선택자: + , 바로 뒤 */
+    section + p {
+        border: solid 5px lawngreen;
+    }
+</style>
+</head>
+<body>
+    <p>lorem ipsum dolor sit amet</p>
+    <p>lorem ipsum dolor sit amet</p>
+    <p>lorem ipsum dolor sit amet</p>
+    <section>
+        <div>
+            <p>lorem ipsum dolor sit amet</p>
+        </div>
+        <p>lorem ipsum dolor sit amet</p>
+        <p>lorem ipsum dolor sit amet</p>
+    </section>
+    <p>lorem ipsum dolor sit amet</p>
+    <p>lorem ipsum dolor sit amet</p>
+    <p>lorem ipsum dolor sit amet</p>
+
+</body>
+</html>
