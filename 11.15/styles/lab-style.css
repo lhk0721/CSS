@@ -1,0 +1,9 @@
+li.external-style p.external-style {
+    font-weight: 700;
+    background-color: skyblue;
+}
+
+li.external-style span {
+    font-weight: bold;
+    color: chocolate;
+}   

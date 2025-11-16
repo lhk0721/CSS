@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+<meta charset="UTF-8" >
+<meta http-equiv="X-UA-Compatible" content="IE=edge" >
+<meta name="viewport" 
+    content="width=device-width, 
+        initial-scale=1.0, 
+        minimum-scale=1.0, 
+        maximum-scale=5.0, 
+        user-scalable=yes" >
+<meta name="description" content="설명 입력">
+<title>CSS</title>
+<style>
+
+    /*  */
+    .implement p.internal-style {
+        color: salmon;
+    }
+    .implement span.internal-style {
+        color: red;
+        font-weight: bold;
+    }
+</style>
+<link rel="stylesheet" href="./styles/lab-style.css">
+</head>
+<body>
+    <h1>CSS</h1>
+    <hr>
+    <section class="implement">
+        <h2>CSS 적용</h2>
+        <section class="con">
+            <hr>
+            <ol>
+                <li>
+                    <h3>인라인</h3>
+                    <ul>
+                        <li id="implement-first-li">
+                            <p style="font-size: medium;">HTML 태그의 style 속성으로 스타일을 <span style="font-weight: 800">직접 지정</span></p>
+                        </li>
+                        <li>
+                            <p>일반적인 실무 환경에서는 <span style="font-weight: bold; color: red;">권장되지 않습니다.</span></p>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <h3 class="internal-style">내부 스타일</h3>
+                    <ul>
+                        <li>
+                            <p class="internal-style">HTML의 head 요소 안에서, style 태그를 사용하여 스타일을 정의</p>
+                        </li>
+                        <li>
+                            <p class="internal-style">HTML 파일 길이가 길어지기 때문에 <span class="internal-style">효율적이지 않습니다.</span></p>
+                        </li>
+                    </ul>
+                </li>
+                <li class="external-style">
+                    <h3 >외부 스타일</h3>
+                    <ul>
+                        <li>
+                            <p class="external-style">HTML 파일에 <span>외부 CSS 파일</span>을 연결하는 방식</p>
+                        </li>
+                        <li>
+                            <p class="external-style">link태그, rel="stylesheet", href="~/style.css" 로 연결</p>
+                        </li>
+                        <li>
+                            <h4>다중 스타일 시트</h4>
+                            <ol>
+                                <li>기본
+                            <pre><code>
+    &lt;!-- reset.css 브라우져의 스타일을 초기회 --&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;./styles/reset.css&quot;&gt;
+
+    &lt;!-- 폰트 --&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;./styles/font.css&quot;&gt;
+
+    &lt;!-- 레이아웃 --&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;./styles/layout.css&quot;&gt;
+    
+    &lt;!-- reset.css의 내용을 덮어쓴다. --&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;./styles/main.css&quot;&gt;
+                </code></pre>
+                                </li>
+                                <li>css 파일 안에 css 포함하기</li>
+                            </ol>
+
+                        </li>
+                    </ul>
+                </li>
+            </ol>
+        </section>
+    <!-- inplement section ends -->
+    </section>
+</body>
+</html>
