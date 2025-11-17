@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+<meta charset="UTF-8" >
+<meta http-equiv="X-UA-Compatible" content="IE=edge" >
+<meta name="viewport" 
+        content="width=device-width, 
+                initial-scale=1.0, 
+                minimum-scale=1.0, 
+                maximum-scale=5.0, 
+                user-scalable=yes" >
+<meta name="description" content="설명 입력">
+<title>color</title>
+<style>
+    .keyward {
+        color: cadetblue;
+        border: solid 2px pink;
+        background-color: mediumorchid;
+    }
+    .hex {
+        color: #ff00ff;
+        color: #f0f;
+        color: #ffaa00aa; /*투명도*/
+    }
+    .rgb {
+        color: rgb(255, 130, 10);
+    }
+    .rgba {
+        color: rgba(255, 130, 10, 0.3); /*투명도는 소숫점으로.*/
+    }
+    .color {
+        color: hotpink;
+        border: solid 1px hotpink;
+    }
+    .current-color {
+        color: currentColor; /* 상속받은 컬러 가져오게 됨. */
+        border: solid 5px currentColor;
+    }
+</style>
+</head>
+<body>
+    <div class="color">
+        <p class="keyward">키워드로 설정한 색상</p>
+        <p class="hex">HEX 코드로 설정한 색상</p>
+        <p class="rgb">RGB로 설정한 색상</p>
+        <p class="rgba">rgba로 설정한 색상</p>
+        <p class="current-color">상솟값을 이용한 색상</p>
+    </div>
+</body>
+</html>

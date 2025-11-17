@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+<meta charset="UTF-8" >
+<meta http-equiv="X-UA-Compatible" content="IE=edge" >
+<meta name="viewport" 
+        content="width=device-width, 
+                initial-scale=1.0, 
+                minimum-scale=1.0, 
+                maximum-scale=5.0, 
+                user-scalable=yes" >
+<meta name="description" content="설명 입력">
+<title>font</title>
+    <!-- 스니펫에 넣어 쓰지는 않는다. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Nanum+Pen+Script&family=Oswald:wght@300&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dongle&family=Nanum+Gothic:wght@400;700;800&family=Nanum+Pen+Script&family=Oswald&display=swap');
+        /* 폰트페이스에서 정의된 굵기 외엔 수정하지 말자. 브라우져가 강제로 구김. */
+
+        @font-face {
+            font-family: 'Suit';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Light.woff2') format('woff2');
+            font-weight: 300;
+            font-display: swap;
+        }
+        
+        @font-face {
+            font-family: "pretendard";
+            src: url("./fonts/Pretendard-Regular.woff") format("woff");
+            font-weight: 400;
+            font-style: none;
+        }
+        @font-face {
+            font-family: "pretendard";
+            src: url("./fonts/Pretendard-Bold.woff") format("woff");
+            font-weight: 700;
+            font-style: none;
+        }
+        .nanum{
+            font-family: "Nanum Pen Script";
+        }
+        .dongle {
+            font-family: "Dongle";
+        }
+        .suit {
+            font-family: "Suit", sans-serif;
+        }
+        .regular {
+            font-family: "pretendard", sans-serif;
+            font-weight: 400;
+        }
+        .bold {
+            font-family: "pretendard", sans-serif;
+            font-weight: 700;
+        }
+        /* 보통 실무에서 사용되는 방법  */
+        /* body {
+            font-family: "pretendard", sans-serif;
+        }
+        .bold {
+            font-weight: 700;
+        } */
+        
+        .pixel {
+            font-size: 20px;
+        }
+
+        .parent {
+            font-size: 10px;
+        }
+
+        .em {
+            font-size: 2em;
+        }
+
+        .rem {
+            /* 일반적인 브라우져에서 기본 크기가 16px */
+            font-size: 2rem;
+        }
+
+        /* rem을 이용해 특정 크기 정하기 */
+        /* .text{
+            font-size: 0.625rem;
+        } */
+
+        /* 보통 실무에서 사용하는 방법 */
+        html {
+            font-size: 10px;
+        }
+        body {
+            font-size: 10px;
+        }
+        .text {
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <p>Nanum Pen Script 폰트 적용</p>
+    <p class="nanum">Nanum Pen Script 폰트 적용</p>
+    <p class="dongle">Dongle 폰트 적용</p>
+    <p class="suit">폰트 굵기가 진짜 다양하다</p>
+    <p class="regular">Pretendard-Regular</p>
+    <p class="bold">Pretendard-Bold</p>
+
+    <div class="parent">
+        <h2>글꼴의 크기</h2>
+
+        <!-- 픽셀: 절대단위 -->
+        <p class="pixel">픽셀로 적용한 폰트 크기</p>
+        
+
+        <!-- em:상대단위 -->
+        <!-- 부모: 10 => 2em : 20px -->
+        <p class="em">em으로 적용한 부모 기준 상대단위 </p>
+
+        <!-- rem:루트기준 상대단위 -->
+        <p class="rem">rem으로 적용한 루트 기준 상대단위</p>
+
+        <p class="text">rem을 사용해서 10px로 만들어주세요!</p>
+    </div>
+</body>
+</html>

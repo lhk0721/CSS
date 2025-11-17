@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+<meta charset="UTF-8" >
+<meta http-equiv="X-UA-Compatible" content="IE=edge" >
+<meta name="viewport" 
+        content="width=device-width, 
+                initial-scale=1.0, 
+                minimum-scale=1.0, 
+                maximum-scale=5.0, 
+                user-scalable=yes" >
+<meta name="description" content="설명 입력">
+<title>Transformation</title>
+<style>
+        .text-transform {
+                /* 모든 글자를 대문자로 */
+                text-transform: uppercase;
+
+                /* 모든 글자를 소문자로 */
+                text-transform: lowercase;
+
+                /* 단어의 첫글자를 대문자로 */
+                text-transform: capitalize;
+        }
+
+        /* 첫번째 글자에만 스타일을 줄 수 있는 가상요소 사용 */
+        /* 인라인 스타일이 못하는 CSS의 장점. */
+        .text-transform::first-letter {
+                font-size: 30px;
+                font-weight: bold;
+                color: red;
+                text-transform: lowercase;
+        }
+
+        /* a 태그에서 주로 사용 */
+        .decoration .line {
+            text-decoration-line: 
+            overline
+            underline
+            line-through;
+            text-decoration-color: blueviolet;
+            text-decoration-thickness: 2px;
+            text-decoration-style: wavy;
+            /* 축약형 */
+            text-decoration: 1px underline blue;
+        }
+
+        .text-shadow {
+            text-shadow: 2px 2px 4px red;
+        }
+
+
+</style>
+</head>
+<body>
+    <p class="text-transform">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae corporis, architecto dignissimos quasi laboriosam eligendi eveniet ex natus consequuntur et aspernatur odio veniam ullam mollitia sunt possimus quaerat corrupti ipsam.</p>
+
+    <div class="decoration">
+        <p class="line"> 선의 위치 지정</p>
+    </div>
+    
+    <p class="text-shadow">글씨의 그림자 효과</p>
+</body>
+</html>
