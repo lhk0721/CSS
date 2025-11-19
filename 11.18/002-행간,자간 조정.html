@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+<meta charset="UTF-8" >
+<meta http-equiv="X-UA-Compatible" content="IE=edge" >
+<meta name="viewport" 
+        content="width=device-width, 
+                initial-scale=1.0, 
+                minimum-scale=1.0, 
+                maximum-scale=5.0, 
+                user-scalable=yes" >
+<meta name="description" content="설명 입력">
+<title>행간, 자간 조정</title>
+<style>
+    /* 기본값. 변화 없음. */
+    .normal-line-height {
+        line-height: normal;
+    }
+    .increased-line-height {
+        line-height: 1.5;
+        /* line-height: 30px; */
+        /* 단위 없는 숫자 방식이 더 유연하고 권장됨. */
+        span {
+            line-height: 20px;
+        }
+    }
+
+    .normal-spacing {
+        letter-spacing: normal;
+        text-indent: -1em;
+    }
+    .wide-spacing {
+        letter-spacing: 1.5em;
+    }
+    .narrow-spacing {
+        letter-spacing: -0.2em;
+    }
+
+</style>
+</head>
+<body>
+    <p class="normal-line-height">
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis, nobis. Alias illo non autem harum temporibus iusto cum labore cupiditate explicabo corporis reprehenderit minus odio, quae, deserunt omnis aut quibusdam.
+    </p>
+    <p class="increased-line-height">
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam itaque tenetur possimus deserunt est quae, voluptatum, sit reprehenderit quo architecto culpa dolore adipisci aperiam rem commodi minima, iste fugit autem!
+    <span>
+        Lorem ipsum dolor, sit amet coasdasdansectetur adipisicing elit. Totam dolorem, maiores corporis autem optio fugiat, sapiente unde itaque provident odio quisquam, asperiores beatae sed adipisci voluptate mollitia necessitatibus expedita similique.
+    </span>
+    </p>
+    <h2 class="normal-spacing">일반 자간을 설정해보겠습니다</h2>
+    <h2 class="wide-spacing">넓은 자간을 설정해보겠습니다</h2>
+    <h2 class="narrow-spacing">좁은 자간을 설정해보겠습니다</h2>
+</body>
+</html>

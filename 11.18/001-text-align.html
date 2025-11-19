@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+<meta charset="UTF-8" >
+<meta http-equiv="X-UA-Compatible" content="IE=edge" >
+<meta name="viewport" 
+        content="width=device-width, 
+                initial-scale=1.0, 
+                minimum-scale=1.0, 
+                maximum-scale=5.0, 
+                user-scalable=yes" >
+<meta name="description" content="설명 입력">
+<title>text-align</title>
+
+<style>
+    .box1, .box2 {
+        border: solid 2px salmon;
+    }
+    .box1 {
+        text-align: left;
+        text-align: center;
+        text-align: right;
+        text-align: justify;
+    }
+
+    .vertical div:not([class]) {
+        line-height: 2.5;
+        border: 1px dashed gray;
+        margin: 10px;
+    }
+
+    .box {
+        line-height: 1;
+        background-color: lightgreen;
+        display: inline;
+    }
+    /* 부모요소에 맞춤 */
+    .baseline{
+        vertical-align: baseline;
+    }
+    /* 현재 요소의 영향을 받는다. 라인박스 내에서 가장 높은 요소 기준 위에 정렬된다. */
+    .top {
+        vertical-align: top;
+    }
+    /* 폰트의 중간 위치를 부모의 basline + x-height의 절반 */
+    .middle{
+        vertical-align: middle;
+    }
+    /* 라인박스 내에서 가장 낮은 기준 위 */
+    .bottom {
+        vertical-align: bottom;
+    }
+    /* 부모 요소의 폰트 크기 기준으로 top */
+    .text-top {
+        vertical-align: text-top;
+    }
+    .text-bottom {
+        vertical-align: text-bottom;
+    }
+    /* 이미지도  영향을 받음 현재 baseline으로 맞춰저 있음*/
+    .img-cont {
+        background-color: red;
+    }
+    .img-cont img {
+        vertical-align: bottom;
+    }
+</style>
+</head>
+<body>
+    <div class="vertical">
+        <div>
+            텍스트
+            <div class="box baseline">baseline</div>
+        </div>
+        <div>
+            텍스트
+            <span style="font-size: 40px">큰 글자</span>
+            <span style="font-size: 20px">중간 글자</span>
+            <div class="box top">top</div>
+        </div>
+        <div>
+            텍스트
+            <div class="box middle">middle</div>
+        </div>
+        <div>
+            텍스트
+            <div class="box bottom">bottom</div>
+        </div>
+        <div>
+            텍스트
+            <span style="font-size: 40px">큰 글자</span>
+            <div class="box text-top">text-top</div>
+        </div>
+        <div>
+            텍스트
+            <div class="box text-bottom">text-btm</div>
+        </div>
+
+        <div>
+            텍스트
+            <div class="box baseline">baseline</div>
+            <div class="box top">top</div>
+            <div class="box middle">middle</div>
+            <div class="box bottom">bottom</div>
+            <div class="box text-top">text-top</div>
+            <div class="box text-bottom">text-btm</div>
+        </div>
+    </div>
+    <span class="img-cont">
+    <img
+        src="./images/weniv-binky.png"
+        alt="Placeholder"
+    />
+    </span>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+<meta charset="UTF-8" >
+<meta http-equiv="X-UA-Compatible" content="IE=edge" >
+<meta name="viewport" 
+        content="width=device-width, 
+                initial-scale=1.0, 
+                minimum-scale=1.0, 
+                maximum-scale=5.0, 
+                user-scalable=yes" >
+<meta name="description" content="설명 입력">
+<title>단위</title>
+<style>
+    .parent {
+        background-color: lightgreen;
+        width: 200px;
+        height: 150px;
+        font-size: 40px;
+    }
+    .child {
+        background-color: coral;
+        width: 50%;
+        /* height: 50%;  */
+        /*부모 요소 속성이 지정되어있지 않으면 적용되지 않는다.*/
+        width: 50vw;
+        /* height: 50vh; */
+
+        width: 50vmin;
+        width: 50vmax;
+        font-size: 2rem;
+        font-size: 3em;
+    }
+</style>
+</head>
+<body>
+    <div class="parent">
+        <p class="child">자식요소입니다</p>
+    </div>
+</body>
+</html>

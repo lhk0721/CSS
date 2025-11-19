@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+<meta charset="UTF-8" >
+<meta http-equiv="X-UA-Compatible" content="IE=edge" >
+<meta name="viewport" 
+        content="width=device-width, 
+                initial-scale=1.0, 
+                minimum-scale=1.0, 
+                maximum-scale=5.0, 
+                user-scalable=yes" >
+<meta name="description" content="설명 입력">
+<title>줄바꿈, 말줄임표</title>
+<style>
+    p {
+        border: solid 2px salmon;
+        width: 200px;
+        /* 기본값 */
+        /* 단어는 넘침 */
+        word-break: normal;
+    }
+    .word-break {
+        /* 글자(문자) 단위로 줄바꿈이 일어남. */
+        word-break: break-all;
+
+        /* 단어 단위로 줄바꿈이 일어남. 한글 포함. */
+        word-break: keep-all;
+        /* 긴 단어가 있을 경우 중간에 강제로 줄바꿈 */
+        overflow-wrap: break-word;
+    }
+    .overflow-clip {
+        text-overflow: clip;/*기본값 */
+        overflow: hidden;
+        white-space: nowrap; /*중바꿈 안함.*/
+    }
+    .ellipsis {
+        text-overflow: ellipsis;/*기본값 */
+        overflow: hidden;
+        white-space: nowrap; /*중바꿈 안함.*/
+    }
+    .multi-ellipsis{
+        /* webkit: 비표준 CSS. 호환성 검사 필수 */
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3; /*원하는 라인 수*/
+    }
+</style>
+</head>
+<body>
+    <h2>원본 텍스트</h2>
+    <p>
+        Lorem ipsum dolor sit, amonsectetonsectetonsectetonsectetet consectetur adipisicing elit. Error,영어와 한글이 섞여있ㄴ느 매우매우매우긴 한글은 어떻게 보일까요?
+    </p>
+    <p class="word-break">
+        Lorem ipsum dolor sit, amonsectetonsectetonsectetonsectetet consectetur adipisicing elit. Error,영어와 한글이 섞여있ㄴ느 매우매우긴우매우매우긴우매우긴 한글은 어떻게 보일까요?
+    </p>
+
+    <!-- 힌줄 -->
+    <p class="overflow-clip">
+        Lorem ipsum dolor sit, amonsectetonsectetonsectetonsectetet consectetur adipisicing elit. Error,영어와 한글이 섞여있ㄴ느 매우매우긴우매우매우긴우매우긴 한글은 어떻게 보일까요?
+    </p>
+    <!-- 전문 보기 방법을 제공해야 한다. -->
+    <!-- 한줄 + 말줄임표 -->
+    <p class="ellipsis">
+                Lorem ipsum dolor sit, amonsectetonsectetonsectetonsectetet consectetur adipisicing elit. Error,영어와 한글이 섞여있ㄴ느 매우매우긴우매우매우긴우매우긴 한글은 어떻게 보일까요?
+    </p>
+    <!-- 여러줄 + 말줄임표 -->
+    <p class="multi-ellipsis">
+        Lorem ipsum dolor sit, amonsectetonsectetonsectetonsectetet consectetur adipisicing elit. Error,영어와 한글이 섞여있ㄴ느 매우매우긴우매우매우긴우매우긴 한글은 어떻게 보일까요?
+    </p>
+</body>
+</html>
