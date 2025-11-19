@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+<meta charset="UTF-8" >
+<meta http-equiv="X-UA-Compatible" content="IE=edge" >
+<meta name="viewport" 
+        content="width=device-width, 
+                initial-scale=1.0, 
+                minimum-scale=1.0, 
+                maximum-scale=5.0, 
+                user-scalable=yes" >
+<meta name="description" content="설명 입력">
+<title>variables</title>
+    <style>
+
+        :root {
+            /* 이름을 저장할때는 "--이름: 저장할 값" */
+            --primary-color: #ff9832;
+            --background-color: #eee;
+            --gary-Lv1-color: #f3f5fe;
+            --shadow:
+        }
+
+        /* 사용할 때는 var 안에 사용할 변수 이름 넣는다. */
+        .hello {
+            color: var(--primary-color);
+        }
+
+        body{
+            background-color: var(--background-color);
+        }
+    </style>
+</head>
+<body>
+    <p class="hello">hello world</p>
+</body>
+</html>

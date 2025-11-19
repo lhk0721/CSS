@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+<meta charset="UTF-8" >
+<meta http-equiv="X-UA-Compatible" content="IE=edge" >
+<meta name="viewport" 
+        content="width=device-width, 
+                initial-scale=1.0, 
+                minimum-scale=1.0, 
+                maximum-scale=5.0, 
+                user-scalable=yes" >
+<meta name="description" content="설명 입력">
+<title>sturctive pseudo-elements</title>
+<style>
+    li:first-child {
+        border: solid 2px salmon;
+    }
+    li:last-child {
+        border: solid 2px purple;
+    }
+    body ul:first-child {
+        /* background-color: lightgreen; */
+    }
+    /* body의 직계자식의 경우 last-child를 사용할 수 없다.
+    브라우져가 자동으로 추가하는 보이지 않는 직계 자식들이 있을 수 있다. */
+    body ul:last-child {
+        background-color: lightpink;
+    }
+
+    /* nth-child 자식 요소 중에 */
+
+    li:nth-child(3) {
+        color: red;
+    }
+    /* 같은결과. */
+    ul :nth-child(3){
+        color:blue
+    }
+    li:nth-child(odd){
+    background-color: lightgreen;    
+    }
+    li:nth-child(even){
+        background-color: salmon;
+    }
+
+    /* 수식 an + b */
+    /* n = 0,1,2,3,4,... */
+    /* a:주기, b: 시작점 */
+    li:nth-child(n + 3){
+        border: solid 3px black;
+    }
+
+    /* 처음 3개의 요소 */
+    li:nth-child(-n+3){
+        color: blue;
+    }
+    
+    /* 수식-자주 사용되는 패턴들 */
+    /* 2n -> 짝수
+    2n + 1 -> 홀수
+    3n -> 3의 배수
+    -n + 3 -> 처음 3개 */
+
+    h2:nth-of-type(2){
+        color: lawngreen;
+    }
+
+    /* 공백 : ~자식*/
+
+    /* 자식들 중 n번째 */
+    div :nth-child(1){
+        background-color: darkred;
+    }
+    /* 여러 태그들 1번째들 */
+    div :nth-of-type(1){
+        background-color: lightpink;
+    }
+
+    /* only-of-type */
+    div :only-of-type{
+        background-color: salmon;
+    }
+
+    div :not(:first-child) {
+        border: 1px solid orange;
+    }
+
+    /* 같은 요소 중 선택 */
+    h1 a,
+    h2 a,
+    h3 a{
+        border: solid 1px black;
+    }
+    :is(h1,h2,h3) a{
+        color: red;
+    }
+
+    :where(h1,h2,h3) a {
+        background-color: aqua;
+        /* where은 구체성의 원칙에서 가중치 점수가 0점 오히려 장점 */
+        /* 오히려 장점 - 기본 속성 정의할 때 사용 */
+        color: pink;
+    }
+
+    h3:has(a){
+        border: solid 1px red;
+    }
+
+    /* 부모 선택자의 등장 */
+
+
+
+
+</style>
+</head>
+<body>
+    <ul>
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+        <li>item4</li>
+        <li>item5</li>
+        <li>item6</li>
+        <li>item7</li>
+        <li>item8</li>
+        <li>item9</li>
+        <li>item10</li>
+    </ul>
+    <ull>
+        <li>item1</li>
+    </ull>
+    <div>
+        <h2>첫번째 제목</h2>
+        <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni soluta sapiente ullam in cumque animi dignissimos consectetur consequuntur voluptates culpa eveniet quibusdam esse, ducimus facilis a repellat, laborum molestias quam.<span>첫번째 태그</span>
+        </p>
+        
+        <h2>두번째 제목</h2>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia esse suscipit eos sit nulla sint, fuga laudantium architecto vitae, assumenda quae iusto dolores officia quaerat ut accusantium voluptatem itaque cumque.</p>
+    </div>
+    <section>
+        <h1><a href="">h%의링크</a></h1>
+        <h2><a href="">h%의링크</a></h2>
+        <h3><a href="">h%의링크</a></h3>
+        <h3>소제목</h3>
+    </section>
+</body>
+</html>

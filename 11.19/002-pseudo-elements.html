@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+<meta charset="UTF-8" >
+<meta http-equiv="X-UA-Compatible" content="IE=edge" >
+<meta name="viewport" 
+        content="width=device-width, 
+                initial-scale=1.0, 
+                minimum-scale=1.0, 
+                maximum-scale=5.0, 
+                user-scalable=yes" >
+<meta name="description" content="설명 입력">
+<title>pseudo-elements</title>
+<style>
+    .content {
+        border: solid 2px hotpink;
+        background-color:  pink;
+    }
+    .content::before {
+        display: block;
+        content: "";
+        border: 2px solid purple;
+        width: 20px;
+        height: 20px;
+        background-color: cornflowerblue;
+    }
+    .content::after {
+        content: "오늘은 수요일입니다";
+        color: chartreuse;
+    }
+    .before-text::before{
+        content: "셀프클로징 태그 가상요소 테스트";
+    }
+
+    /* marker 안쓰면 지운다움 넣어야 한다 */
+    .list li{
+        list-style: none;
+    }
+    .list li::before{
+        content: "";
+        display: inline-block;
+        margin-right: 5px;
+        width: 5px;
+        height: 5px;
+        background-color: aqua;
+    }
+
+    /* marker 쓰면 한번에 넣는다. */
+    /* marker는 상속이 안된다. */
+    .marker-list li::marker {
+        content: "*";
+        
+    }
+    .custom-bullets li::marker{
+        content: "🍎";
+    }
+
+    input::placeholder {
+        color: gray;
+        font-size: 10px;
+        font-style: italic;
+    }
+</style>
+</head>
+<body>
+    <p class="content">hellow world</p>
+    <input type="text" class="before-text">
+    <ul class="list">
+        <li>li1</li>
+        <li>li2</li>
+        <li>li3</li>
+        <li>li4</li>
+        <li>li5</li>
+    </ul>
+    <ul class="marker-list">
+        <li>li1</li>
+        <li>li2</li>
+        <li>li3</li>
+        <li>li4</li>
+        <li>li5</li>
+    </ul>
+    <ul class="custom-bullets">
+        <li>사과</li>
+        <li>바나나</li>
+        <li>오렌지</li>
+    </ul>
+
+    <input type="text" placeholder="검색어를 입력해주세요">
+</body>
+</html>

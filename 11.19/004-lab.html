@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+<meta charset="UTF-8" >
+<meta http-equiv="X-UA-Compatible" content="IE=edge" >
+<meta name="viewport" 
+        content="width=device-width, 
+                initial-scale=1.0, 
+                minimum-scale=1.0, 
+                maximum-scale=5.0, 
+                user-scalable=yes" >
+<meta name="description" content="설명 입력">
+<title>lab</title>
+<style>
+	section .card {
+		padding: 15px;
+		display: inline-block;
+		margin: 10px;
+		border-radius: 10px;
+		background-color: #eee;
+		box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15)
+	}
+	section :first-child {
+		border: dashed 1px black ;
+		background-color: coral;
+	}
+
+	section :nth-child(2){
+		background-color: green;
+	}
+	section :nth-child(3){
+		background-color: aqua;
+	}
+	section :nth-child(4){
+		background-color: lightpink;
+	}	
+	section :nth-child(5){
+		background-color: violet;
+	}
+
+	section :last-child {
+		border: dashed 1px black ;
+		background-color: cornflowerblue;
+	}
+
+	
+	li::marker{
+		content: "𓇼";
+	}
+
+	.team-list li:nth-of-type(1)::marker {
+		content: "𓇻";
+	}
+
+	li::after {
+		content: "팀원";
+		font-size: 0.8em;
+		color: gray;
+	}
+	li:nth-of-type(1):after {
+		content: "팀장";
+		font-size: 0.8em;
+		color: red;
+	}
+</style>
+</head>
+<body>
+<h1>프로젝트 팀 카드</h1>
+
+	<section>
+		<div class="card">HTML</div>
+		<div class="card">CSS</div>
+		<div class="card">JavaScript</div>
+		<div class="card">React</div>
+		<div class="card">TypeScript</div>
+		<div class="card">Next.js</div>
+	</section>
+
+	<h2>팀원 목록</h2>
+	<ul class="team-list">
+		<li>로지</li>
+		<li>하티</li>
+		<li>지지</li>
+		<li>웨이드</li>
+		<li>빙키</li>
+		<li>라이캣</li>
+	</ul>
+</body>
+</html>
