@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+<meta charset="UTF-8" >
+<meta http-equiv="X-UA-Compatible" content="IE=edge" >
+<meta name="viewport" 
+        content="width=device-width, 
+                initial-scale=1.0, 
+                minimum-scale=1.0, 
+                maximum-scale=5.0, 
+                user-scalable=yes" >
+<meta name="description" content="설명 입력">
+<title>width-height</title>
+<style>
+    .width {
+        background: lightgreen;
+        margin-bottom: 10px;
+    }
+
+    .auto {
+        /* 부모 요소를 기준으로 가질 수 있는 최대 넓이를 자동계산 */
+        width: auto;
+    }
+
+    /* body {
+        width: 200px;
+    } */
+
+    .min {
+        /* 컨첸츠가 넘치지 않는 범위에서 최대 */
+        /* 영문과 한글은 개행 단위가 달라 차이난다. */
+        /* 영어 -> 가장 긴 단어
+        한글 -> 한 글자 */
+        width: min-content;
+    }
+
+    .max {
+        /* 줄바꿈 없이 컨텐츠 기준 최대 너비
+        부모 요소를 벗어날 수는 없다. */
+        /* 줄바꿈 안됨 */
+        width: max-content;
+    }
+
+    .fit {
+        /* 공간이 충분하면 max, 공간이 부족하다면 줄바꿈
+        그러나 min-content보다는 작아지지 않는다. */
+        /* min(max-content, max(min-content,길이값)) */
+        /* 줄바꿈 됨 */
+        width: fit-content;
+    }
+    .px {
+        /* 정확한 값의 너비를 갖게 */
+        width: 100px;
+    }
+
+    .box1, .box2 {
+        background-color: lightcoral;
+        margin-bottom: 10px;
+        /* (기본값) */
+        /* 컨텐츠의 높이만큼 자동으로 설정 */
+        height: 300px;
+    }
+
+    .box3 {
+        background-color: lightseagreen;
+        /* % 쓰려면 부모한테 수치가 적용되어있어야함. */
+        height: 50%;
+    }
+</style>
+</head>
+<body>
+    <div class="width auto">auto 속성을 적용한 요소</div>
+    <div class="width min">min 속성~</div>
+    <div class="width min">민 속성~ </div>
+    <div class="width max">max속성을 적용한 요소</div>
+    <div class="width fit">fit 속성을 적용한 요소</div>
+    <div class="width px">fit 속성을 적용한 요소</div>
+
+    <div class="box1">1</div>
+    <div class="box2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime atque aperiam consequatur laborum expedita officiis, labore ad ratione repellat quisquam. Enim obcaecati illum placeat officiis alias id fugit in vel.
+        <div class="box3">child</div>
+    </div>
+</body>
+</html>

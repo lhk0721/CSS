@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+<meta charset="UTF-8" >
+<meta http-equiv="X-UA-Compatible" content="IE=edge" >
+<meta name="viewport" 
+        content="width=device-width, 
+                initial-scale=1.0, 
+                minimum-scale=1.0, 
+                maximum-scale=5.0, 
+                user-scalable=yes" >
+<meta name="description" content="설명 입력">
+<title>마진병합현상</title>
+<!-- 블록 레벨 요소가 인접해 있을 때, 상하 마진이 병합되는 현상 -->
+<!-- 마진이 겹칠 때 작은 것은 무시하고 큰 것만 적용 -->
+
+<style>
+    .parent {
+        background-color: lightpink;
+        width: fit-content;
+        /* 부모, 자식간에 뭐가 없을 때도 마진 병합 현상이 일어난다. */
+        /* 해결방법 
+        1. 부모 요소를 블록레벨 요소가 아니게 설
+            블록레벨 요소가 아니면 마진 병합 현상이정 일어나지 않음.
+        2. *부모-자식 사이에 무언가를 넣는다.
+            paddin, border,content
+            레이아웃 상에 오차 발생 가능...
+        3. overflow 속성 사용
+            overflow: hidden;
+            BFC(Block Formattin context)
+                독립적인 영역을 만드는 것. 이 안의 요소들은 외부와 간섭하지 않음.
+        4.flow-root
+            display: fow-root;
+            BFC 형성.*/
+
+        /* 마진병합이 생기지 않도록 개발하는 것이 중요하다.
+        1. flex/grid 레이아웃 설정
+        2. 한쪽 방향으로만 margin을 설정
+        3. 부모의 paddin 속성 사용해서 여백을 성정 */
+
+    }
+
+    .child {
+        width: 100px;
+        height: 100px;
+        background-color: lawngreen;
+        margin: 20px;
+        /* 해결방법 */
+        /* display: inline-block; */
+    }
+</style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child">1</div>
+        <div class="child">2</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+<meta charset="UTF-8" >
+<meta http-equiv="X-UA-Compatible" content="IE=edge" >
+<meta name="viewport" 
+        content="width=device-width, 
+                initial-scale=1.0, 
+                minimum-scale=1.0, 
+                maximum-scale=5.0, 
+                user-scalable=yes" >
+<meta name="description" content="설명 입력">
+<title>inline-block</title>
+<style>
+    .box,
+    .text {
+        width: 200px;
+        height: 100px;
+        /* margin은 인라인 요소의 경우 좌,우에만 적용된다. */
+        margin: 10px;
+    }
+    div{
+        background-color: lightblue;
+    }
+
+    .box {
+        background-color: lightblue;
+    }
+
+    .text{
+        background-color: lightpink;
+
+    }
+</style>
+</head>
+<body>
+    <div class="box">hello world</div>
+    <span class="text">hello world</span>
+    <div>hello world</div>
+</body>
+</html>

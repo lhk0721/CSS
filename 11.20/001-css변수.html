@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+
+            /* 전역에서 사용할 때 - 루트에서 */
+            :root {
+                /* 이름을 작성할 때는 "--이름: 저장할 값" */
+                --primary-color: #ff9832;
+                --background-color: salmon;
+                --gary-Lv1-color: #f3f5fa;
+
+                --primary-font: 18px;
+                --shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+            }
+
+            body {
+                /* 사용할 때는 var 안에 내가 사용할 변수 이름 */
+                background-color: var(--background-color);
+                /* 백업값 */
+                color: var(white, --background-color);
+            }
+
+            /* 변수선언은 루트 뿐만 아니라 어디서도 가능하다. */
+            [data-theme="dark"] {
+                --primary-color: gray;
+                --background-color:black;
+            }
+            p {
+                --primary-color: var(--primary-color);
+            }
+
+        </style>
+    </head>
+    <body>
+        <p>hello world</p>
+    </body>
+</html>
