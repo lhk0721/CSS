@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+<meta charset="UTF-8" >
+<meta http-equiv="X-UA-Compatible" content="IE=edge" >
+<meta name="viewport" 
+    content="width=device-width, 
+        initial-scale=1.0, 
+        minimum-scale=1.0, 
+        maximum-scale=5.0, 
+        user-scalable=yes" >
+<meta name="description" content="설명 입력">
+<title>Document</title>
+
+<style>
+    /* 상속되는 것 */
+    /* 텍스트 관련 속성들(color, font-family, font-size 등 */
+    .parent{
+        color: red;
+    }
+    /* 상속 x */
+    /* 레이아웃 관련 속성들(width, height, margin, padding, border 등) */
+    .parent{
+        color: blueviolet;
+        border: 3px solid green;
+    }
+
+    /* 강제상속 */
+    .inherit{
+        border: inherit;
+    }
+
+    /* 각 속성의 초기값으로 */
+    /* CSS 명세서의 초기값으로 간다. */
+    .initial{
+        border: initial;
+        color: initial;
+    }
+
+    /* 규칙에 맞게 */
+    .unset{
+        border: unset;
+    }
+
+    /* 스타일 태그 이전으로 초기화 */
+    .revert{
+        border: revert;
+        color: revert;
+    }
+
+    /* 전체 상속 제어 */
+    .all{
+        all: initial;
+    }
+    
+
+</style>
+</head>
+<body>
+    <div class="parent">
+        <p class="child">sdasda</p>
+        <div>child div</div>
+        <p class="inherit">inherit</p>
+        <p class="inherit initial">initial</p>
+        <p class="inherit unset">unset</p>
+        <p class="inherit revert">revert</p>
+        <p class="inherit all">all</p>
+    </div>
+</body>
+</html>

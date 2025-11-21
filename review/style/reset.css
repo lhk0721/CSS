@@ -1,0 +1,41 @@
+/* 기본 요소 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 리스트 점 제거 */
+ul, ol {
+    list-style: none;
+}
+
+/* 링크 밑줄 제거 */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 이미지 공백/하단 여백 제거 */
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* 버튼 기본 스타일 제거 */
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* 입력, 버튼 폰트 동일하게 */
+input, button {
+    font: inherit;
+}
+
+/* 테이블 기본 간격 제거 */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}

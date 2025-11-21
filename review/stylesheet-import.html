@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+<meta charset="UTF-8" >
+<meta http-equiv="X-UA-Compatible" content="IE=edge" >
+<meta name="viewport" 
+    content="width=device-width, 
+        initial-scale=1.0, 
+        minimum-scale=1.0, 
+        maximum-scale=5.0, 
+        user-scalable=yes" >
+<meta name="description" content="설명 입력">
+<title>Document</title>
+<!-- 링크 네개를 직접 HTTML에 넣는 방법 -->
+<!-- 빠른 로딩, 캐싱 효율, 디버깅 용이 -->
+<link rel="stylesheet" href="./style/reset.css">
+<link rel="stylesheet" href="./style/font.css">
+<link rel="stylesheet" href="./style/layout.css">
+<link rel="stylesheet" href="./style/main.css">
+
+
+<!-- style.css에서 4개를 @import하고, 그 1개만 link로 쓰는 방식 디버깅 불편-->
+<!-- 직렬 순차 로딩. 느리다. 깜빡이는 문제 캐싱 효율 저하 유지보수 종속적 -->
+<!-- 모듈화 용이  CSS 번들러(Webpack, Vite 등)를 사용-->
+<link rel="stylesheet" href="./style/style.css">
+
+<style>
+    
+</style>
+</head>
+<body>
+
+</body>
+</html>
