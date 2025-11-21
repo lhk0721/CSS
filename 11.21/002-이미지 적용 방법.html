@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+<meta charset="UTF-8" >
+<meta http-equiv="X-UA-Compatible" content="IE=edge" >
+<meta name="viewport" 
+        content="width=device-width, 
+                initial-scale=1.0, 
+                minimum-scale=1.0, 
+                maximum-scale=5.0, 
+                user-scalable=yes" >
+<meta name="description" content="설명 입력">
+<title>이미지 적용 방법</title>
+<style>
+    /* CSS로 background-img써야 하는 경우
+    순수하게 디자인  히어로섹션의 배경, 패턴, 장식용 이미지
+    디자인적 제어가 자유롭고 반응형 처리가 용이함.
+    접근성, SEO 분리*/
+    div {
+        height: 50vh;
+        /* 단축속성 position. size는 순서가 고정되어있음. size 단독으로 사용 불가능 */
+        background-image: url("./images/weniv-binky.png") no-repeat center / contain;
+    }
+</style>
+</head>
+<body>
+    <div></div>
+    <!-- img 태그 사용 -->
+    <!-- 의미이쓴 정보를 전달하는 이미지.
+    이 이미지가 없다면 이해가 어려운가?
+    제품사진, 프로필사진, 로고
+    alt로  대체 텍스트 제공(접근성), SEO 
+    반응형 처리, 디자인적 제어 제한적 -->
+    <img src="./images/weniv-binky.png" alt="위니브 빙키 캐릭터">
+</body>
+</html>

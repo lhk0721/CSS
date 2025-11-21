@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+<meta charset="UTF-8" >
+<meta http-equiv="X-UA-Compatible" content="IE=edge" >
+<meta name="viewport" 
+        content="width=device-width, 
+                initial-scale=1.0, 
+                minimum-scale=1.0, 
+                maximum-scale=5.0, 
+                user-scalable=yes" >
+<meta name="description" content="설명 입력">
+<title>이미지스프라이트</title>
+<style>
+    /* 음수인 이유: 
+    양수를 쓰면이미지가 오른쪽/아래로 이동해서 원하는 이미지가 요소 밖으로 나가버림.
+    음수를 쓰면 이미직 ㅏ 왼쪽/위로 이동해서 원하는 이미지를 요소의 위치로 가져올 수 있음. */
+    .bg-icon_heart {
+    width: 40px; height: 40px;
+    background: url('css_sprites.png') -10px -173px;
+    }
+    .bg-icon_heart_fill {
+    width: 40px; height: 40px;
+    background: url('css_sprites.png') -70px -173px;
+    }
+    .bg-icon_star {
+        width: 40px; height: 40px;
+        background: url('css_sprites.png') -130px -173px;
+    }
+    .bg-icon_star_fill {
+        width: 40px; height: 40px;
+        background: url('css_sprites.png') -190px -173px;
+    }
+    .bg-weniv_logo {
+        width: 619px; height: 143px;
+        background: url('css_sprites.png') -10px -10px;
+    }
+</style>
+</head>
+<body>
+
+
+</body>
+</html>

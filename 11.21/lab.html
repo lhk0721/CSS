@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+<meta charset="UTF-8" >
+<meta http-equiv="X-UA-Compatible" content="IE=edge" >
+<meta name="viewport" 
+        content="width=device-width, 
+                initial-scale=1.0, 
+                minimum-scale=1.0, 
+                maximum-scale=5.0, 
+                user-scalable=yes" >
+<meta name="description" content="설명 입력">
+<title>Lab</title>
+    <style>
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-display: swap;
+        }
+
+        :root{
+            /* normal */
+            --normal-text-color-default: #CBD5DF;
+            --normal-bg-color-default: #343F50;
+            --normal-text-color-hover: #FFF;
+            --normal-bg-color-hover: #343F50;
+            --normal-text-color-active: #FFF;
+            --normal-bg-color-active: #343F50;
+            --normal-text-color-disabled: #4A5568;
+            --normal-bg-color-disabled: #343F50;
+
+            /* positive */
+            --positive-text-color-default: #439AFF;
+            --positive-bg-color-default: #343F50;
+            --positive-text-color-hover: #FFF;
+            --positive-bg-color-hover: #439AFF;
+            --positive-text-color-active: #FFF;
+            --positive-bg-color-active: #439AFF;
+            /* --positive-text-color-disabled: #4A5568;
+            --positive-bg-color-disabled: #343F50; */
+
+            /* negative */
+            --negative-text-color-default: #EB5757;
+            --negative-bg-color-default: #343F50;
+            --negative-text-color-hover: #FFF;
+            --negative-bg-color-hover: #EB5757;
+            --negative-text-color-active: #FFF;
+            --negative-bg-color-active: #EB5757;
+            /* --negative-text-color-disabled: #4A5568;
+            --negative-bg-color-disabled: #343F50; */
+
+            /* box-shadow */
+            --box-shadow-color-default:rgba(255,255,255,0.1);
+            --box-shadow-color-hover: rgba(255,255,255,0.2);
+            --box-shadow-color-active: rgba(0, 0, 0, 0.2);
+        
+        }   
+        
+        html {
+            font-size: 10px;
+        }
+
+        .button1{
+            /* layout */
+            width: 88px;
+            height: 32px;
+            margin-bottom: 5px;
+            padding-top: 9px;
+            padding-bottom: 9px;
+            box-sizing: border-box;
+
+            
+            /* border */
+            border: #1A202C 1px solid;
+            
+
+            /* font */
+            font-family: 'Pretendard', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700px;
+            line-height: 100%;
+            letter-spacing: 0%;
+            text-align: center;
+
+            /* shadow */
+            box-shadow: inset 0px 1px 0px 0px #FFFFFF1A,
+                        inset 1px 0px 0px 0px #FFFFFF1A;
+
+        }
+
+        .button1 span{
+            display: inline-block;
+            /* width: 38px;
+            height: 14px; */
+            line-height: 14px;
+            
+        }
+
+        .normal {
+            background-color: var(--normal-bg-color-default);
+            color: var(--normal-text-color-default);
+        }
+        .normal:hover{
+            background-color: var(--normal-bg-color-hover);
+            color: var(--normal-text-color-hover);
+            text-decoration: underline;
+        }
+        .normal:active{
+            background-color: var(--normal-bg-color-hover);
+            color: var(--normal-text-color-hover);
+            text-decoration: underline;
+        }
+        .normal:disabled{
+            background-color: var(--normal-bg-color-disabled);
+            color: var(--normal-text-color-disabled);
+        }
+        
+
+        .positive{
+            background-color: var(--positive-bg-color-default);
+            color: var(--positive-text-color-default);
+        }
+        .positive:hover{
+            background-color: var(--positive-bg-color-hover);
+            color: var(--positive-text-color-hover);
+            text-decoration: underline;
+
+            border-color: var(--positive-bg-color-hover);
+        }
+        .positive:active{
+            background-color: var(--positive-bg-color-active);
+            color: var(--positive-text-color-active);
+            text-decoration: underline;
+
+            border-color: var(--positive-bg-color-active);
+        }
+        
+
+        .negative{
+            background-color: var(--negative-bg-color-default);
+            color: var(--negative-text-color-default);
+        }
+        .negative:hover{
+            background-color: var(--negative-bg-color-hover);
+            color: var(--negative-text-color-hover);
+            text-decoration: underline;
+
+            border-color: var(--negative-bg-color-hover);
+        }
+        .negative:active{
+            background-color: var(--negative-bg-color-active);
+            color: var(--negative-text-color-active);
+            text-decoration: underline;
+
+            border-color: var(--negative-bg-color-active);
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="button1 normal"><span>Button</span></div>
+    <div class="button1 positive"><span>Yes</span></div>
+    <div class="button1 negative"><span>Del</span></div> -->
+
+    <div><button class="button1 normal">Button</button></div>
+    <div><button class="button1 positive">Yes</button></div>
+    <div><button class="button1 negative">Del</button></div>
+</body>
+</html>

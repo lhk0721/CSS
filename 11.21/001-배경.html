@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+<meta charset="UTF-8" >
+<meta http-equiv="X-UA-Compatible" content="IE=edge" >
+<meta name="viewport" 
+    content="width=device-width, 
+        initial-scale=1.0, 
+        minimum-scale=1.0, 
+        maximum-scale=5.0, 
+        user-scalable=yes" >
+<meta name="description" content="설명 입력">
+<title>배경,이미지</title>
+    <style>
+        .box {
+            width: 100vw;
+            height: 100vh;
+            background-color: lightpink;
+            
+            /* 의미있는 이미지일 땐 html로, 의미없는 이미지일땐 CSS로 넣는다. */
+
+            /* 배경이미지 */
+            background-image: url("./images/weniv-binky.png");
+
+            /* 이미지를 어떻게 반복할 것인지 */
+            /* 이미지가 요소보다 작을 경우 요소의 크기만큼 반복 */
+            background-repeat: repeat;
+            /* no repeat */
+            background-repeat: no-repeat;
+            /* x축으로 반복 */
+            background-repeat: repeat-x;
+            /* Y축으로 반복 */
+            background-repeat: repeat-y;
+            background-repeat: no-repeat;
+
+            /* 이미지 위치 지정 */
+            background-position: right bottom;
+            background-position: right center;
+            background-position: center;
+
+            /* 웹의 죄표는 왼쪽 위가 0이다. */
+            /* 촤상단부터 x,y */
+            /* 값이 1개만 있을 때는 x,y 동일 */
+            background-position: 0% 0%;
+            background-position: 100px 100px;
+
+            /* 이미지 크기 조정 */
+            background-image: url("./images/weniv-suri.png");
+            background-position: 0% 0%;
+            /* 비율 유지, 이미지가 잘리지 않음. 여백이 발생할 가능성이 있음 */
+            /* 이미지 전체가 보여져야 하는 로고, 제품사진 등 */
+            background-size: contain;
+            /* 비율은 유지, 부모 요소 크기를 완전히 차지하고 여백은 생기지 않지만 이미지가 잘림. */
+            /* 이미지랑 부모 요소 비율이 같으면 안잘림. */
+            /* 잘릴 가능성이 있지만 영역이 완전히 채워져야 하는 경우 */
+            background-size: cover;
+            /* 사용자 정의 %단위는 부모 요소의 크기를 기준으로 함.*/
+            /* 비율이 깨질 수 있음. */
+            background-size: 50% 50%;
+
+            /* 배경의 범위 지정 기본값:border-box */
+            border: dotted black 30px;
+            background-clip: border-box;
+            /* 패딩 밖 */
+            background-clip: padding-box;
+            padding: 50px;
+
+            background-clip: content-box;
+            background-clip: border-box;
+
+            /* 이미지의 시작점 */
+            /* 기본값 */
+            background-origin: padding-box;
+            background-origin: border-box;
+            background-origin: content-box;
+
+
+
+
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>
