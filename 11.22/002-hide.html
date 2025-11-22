@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+<meta charset="UTF-8" >
+<meta http-equiv="X-UA-Compatible" content="IE=edge" >
+<meta name="viewport" 
+    content="width=device-width, 
+        initial-scale=1.0, 
+        minimum-scale=1.0, 
+        maximum-scale=5.0, 
+        user-scalable=yes" >
+<meta name="description" content="설명 입력">
+<title>Document</title>
+
+<!-- IR기법 Image Replacement(이미지 대체)-->
+
+<style>
+    .hidden {
+        /* 화면에서 요소가 제거, 레이아웃 젭근성트리에서도 사라짐. 스크린리더에서 읽히지 않음. */
+        /* display: none; */
+
+        /* 요소가 화면에 보이지 않지만 위치하는 layout 남아있음.(투명인간) */
+        visibility: hidden;
+
+        /* 텍스트를 화면에서 없앨 때
+        들여쓰기 음수값을 이용 
+        화면에서만 안보임.
+        링크 포커스가 가능한 요소일 경우 
+        탭으로 포커싱 가능, 혼란 줌.
+        포커스 가능한 경우 사용하지 않음.
+        스크린 리더한테 읽히면서 숨기고싶을 때*/
+        text-indent: -9999px;
+    }
+
+    /* 컨텐츠를 화면 밖으로 보내는 기능 */
+    .sr-only {
+        /* 이대로 쓰면 됨. */
+        position: absolute;
+        left: -9999px;
+        top: auto;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+    }
+
+    /* a11y: accesibility */
+    .a11y-hidden {
+        /* 구형 브라우져용 */
+        clip: rect(1px, 1px, 1px, 1px);
+        /* 최신 브라우져용 */
+        clip-path: inset(50%);
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+    }
+
+</style>
+</head>
+<body>
+    <div class="hidden">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus repudiandae iste culpa, eveniet, nulla ullam aperiam sapiente ipsam temporibus assumenda rem eum. Doloribus iure dignissimos hic nulla suscipit alias accusantium.
+    </div>
+    <button><img src="./images/logo/icon-heart.png" alt="">
+    <span class="sr-only">좋아요</span>
+    <span class="a11y-hidden">좋아요</span>
+    </button>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+<meta charset="UTF-8" >
+<meta http-equiv="X-UA-Compatible" content="IE=edge" >
+<meta name="viewport" 
+    content="width=device-width, 
+        initial-scale=1.0, 
+        minimum-scale=1.0, 
+        maximum-scale=5.0, 
+        user-scalable=yes" >
+<meta name="description" content="설명 입력">
+<title>imag-eratio</title>
+
+<style>
+    /*  aspect-ratio 최근에 나옴*/
+    .aspect {
+        width: 200px;
+        aspect-ratio: 1/1;
+        /* 이미지, 비디오 등이 컨테이너에 어떻게 맞춰질 것인지 */
+        /* bg-size cover랑 비슷한 역할 */
+        object-fit: cover;
+        background-color: black;
+    }
+
+    /* padding 백분율 aspect-ratio 이전. 호환성, 일관성(레거시 코드) 유지용*/
+    .thumbnail {
+        width: 200px;
+        /* 초기화 */
+        height: 0;
+
+        /* padding %는 width 기준 */
+        padding-top: 50%;
+        background-color: orange;
+        
+        /* 이미지를 부모 컨테이너에 꽉차게 해보자 */
+        
+        /* 레이아웃의 기준으로 만들어주자 */
+        position: relative;
+    }
+
+    .thumbnail img {
+        /* 이미지 자체의 위치를 조정 */
+        /* border: solid 5px black; */
+        position: absolute;
+        /* 부모요소 기준 */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        
+        object-fit: cover;
+
+        /* 이미지 위치 조정(크롭) 
+        어느 부분을 보여줄 것인가
+
+        이미지 자체의 위치를 변경하지 않음*/
+        /* 시작지점 */
+        object-position: 0 0;
+        object-position: 0 center;
+    }
+</style>
+</head>
+<body>
+    <img class="aspect" src="./images/weniv-binky.png" alt="위니브 빙키">
+    <div class="thumbnail">
+        <img src="./images/weniv-licat.png" alt="">
+    </div>
+</body>
+</html>

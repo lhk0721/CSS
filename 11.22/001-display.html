@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            /* 좌우마진은 인라인도 됨. */
+            div {
+                margin-bottom: 10px;
+            }
+            p {
+                background-color: lightcoral;
+                width: 100px;
+                height: 100px;
+                margin: 100px 0;
+                display: inline;
+            }
+
+            .box2 span {
+                background-color: lightgreen;
+                width: 100px;
+                height: 100px;
+                margin: 100px 0;
+                display: block;
+            }
+
+            .box3 span {
+                background-color: lightseagreen;
+                width: 100px;
+                height: 100px;
+                margin: 100px 0;
+                /* 인라인요소와 블록 요소의 특징을 겷밥 */
+
+                display: inline-block;
+            }
+
+            .box4 {
+                background-color: #eee;
+                width: 200px;
+                height: 200px;
+                text-align: center;
+                /* flex가 없던 시절 
+                height에 맞춰 수동 조정 해야 함*/
+                line-height: 100px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .box5 {
+                background-color: #eee;
+                display: grid;
+                /* 1fr를 3번 반복. 
+                나머지 공간을 부모 요소의 크기에 맞추어 1대1대1로 나줘갖는다. */
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .grid-item {
+                background-color: lightcoral;
+            }
+
+            .hidden {
+                /* 요소 자체, 요소가 차지하던 공간 사라짐.
+                접근성 트리에서도 제거됨.
+                로그인 이전 마치페이지같은 경우 */
+                display: none;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="box1">
+            <!-- 블록요소: p,div,h,section, article 등등 
+            width, height, 상하 margin cssq박스모델 개념 적용-->
+            <p>블록레벨 요소</p>
+            <p>블록레벨 요소</p>
+            <p>블록레벨 요소</p>
+            <p>블록레벨 요소</p>
+        </div>
+        <div class="box2">
+            <!-- inline 요소: span, a, strong, em, img, input 등등 
+            width, height, 상하 margin cssq박스모델 개념 적용되지 않음-->
+            <span>인라인 레벨 요소</span>
+            <span>인라인 레벨 요소</span>
+            <span>인라인 레벨 요소</span>
+            <span>인라인 레벨 요소</span>
+        </div>
+        <div class="box3">
+            <span>인라인 레벨 요소</span>
+            <span>인라인 레벨 요소</span>
+            <span>인라인 레벨 요소</span>
+            <span>인라인 레벨 요소</span>
+        </div>
+
+        <div class="box4 hidden" >
+            <span class="flex-item">hello world</span>
+        </div>
+
+        <div class="box5">
+            <div class="grid-item">item</div>
+            <div class="grid-item">item</div>
+            <div class="grid-item">item</div>
+            <div class="grid-item">item</div>
+        </div>
+    </body>
+</html>

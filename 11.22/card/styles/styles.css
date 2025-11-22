@@ -1,0 +1,91 @@
+@import url(./custom-reset.css);
+
+
+.body {
+    background-color: #eee;
+}
+
+.frame6 {
+    width: 740px;
+    height: 447px;
+    background-color: #F5F5F5;
+    position: relative;
+}
+
+.frame6 article.card{
+    width: 288px;
+    height: 348px;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+    
+    overflow: hidden;
+}
+
+.card.first {
+    position: absolute;
+    top: 46px;
+    left: 63px;
+}
+
+.card.second {
+    position: absolute;
+    top: 46px;
+    left: 378px;
+}
+article img{
+    object-fit: cover;
+}
+
+article h2.catchphrase {
+    display: inline-block;
+    position: absolute;
+    width: 200px;
+    height: 19px;
+    
+    font-weight: 700;
+    font-size: 1.6rem;
+    
+}
+
+article .text {
+    display: inline-block;
+    position: absolute;
+    width: 256px;
+    height: 40px;
+    font-weight: 400;
+    font-size: 1.2rem;
+    /* text-overflow: ellipsis; */
+    color: #5A6A72;
+    line-height: 160%;
+    letter-spacing: -0.05rem;
+    overflow: hidden;
+    
+}
+
+article .readmore {
+    width: 34px;
+    height: 18px;
+    font-weight: 700;
+    font-size: 1.4rem;
+    font-style: bold;
+    line-height: 100%;
+    text-decoration: solid underline;
+    
+}
+
+article.card.first h2.catchphrase {
+    top: 217px;
+    left: 16px;
+    
+}
+
+article.card.first p.text {
+    top: 252px;
+    left: 16px;
+}
+
+article.card.first .readmore {
+    position: absolute;
+    top: 308px;
+    left: 16px;
+}
