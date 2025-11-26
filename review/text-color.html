@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+<meta charset="UTF-8" >
+<meta http-equiv="X-UA-Compatible" content="IE=edge" >
+<meta name="viewport" 
+    content="width=device-width, 
+        initial-scale=1.0, 
+        minimum-scale=1.0, 
+        maximum-scale=5.0, 
+        user-scalable=yes" >
+<meta name="description" content="설명 입력">
+<title>Text-color</title>
+
+<style>
+    .color {
+        color:lightpink;
+    }
+
+    .color-keyword {
+        color: lightblue;
+    }
+
+    .color-HexCode {
+        color: #ffaaffaa;
+        /* 
+        - ffffff = FFFFFF (non-case-sensitive) 
+        - 000 = 000000 (3자리부터 표기, 같은값 두자리는 한자리로 표현 가능)
+        - 뒤에 두개의 자리수를 추가하여 투명도를 나타내는 알파값을 설정
+            ex) #ffaa00aa
+        - 16진수 노미네이션 '0x'
+            - 0xf = 15 (0~15)
+            - 0xff = 255 (15*16^1 + 15*16^0)
+            - 0xffffff = 15(16⁵ + 16⁴ + 16³ + 16² + 16¹ + 16⁰) = 16777215
+            0 → 0
+            1 → 1
+            2 → 2
+            3 → 3
+            4 → 4
+            5 → 5
+            6 → 6
+            7 → 7
+            8 → 8
+            9 → 9
+            10 → a
+            11 → b
+            12 → c
+            13 → d
+            14 → e
+            15 → f
+        */
+    }
+
+    .rgb {
+        /* 0~255 */
+        color: rgb(255, 255, 255);
+        background-color: black;
+        display: inline-block;
+    }
+
+    /* 명도 접근성 최소 대비율 4.5.1  */
+    .rgba {
+        /* alpha: 0~1 float */
+        color: rgba(250, 100, 0, 0.7);
+    }
+
+    .currentColor {
+        background-color: black;
+        display: inline-block;
+        /* color 명시되지 않았다면 상속값으로. */
+        border: currentColor solid 10px;
+    }
+
+</style>
+</head>
+<body>
+    <h1>Text-related properties</h1>
+    <section class="color">
+        <h2>colors</h2>
+        <p class="color-keyword">color-keyword</p>
+        <p class="color-HexCode">color-HexCode</p>
+        <p class="rgb">rgb</p>
+        <p class="rgba">rgba</p>
+        <p class="currentColor">border: currentColor solid 5px;</p>
+    </section>
+</body>
+</html>

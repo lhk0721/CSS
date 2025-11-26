@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+<meta charset="UTF-8" >
+<meta http-equiv="X-UA-Compatible" content="IE=edge" >
+<meta name="viewport" 
+    content="width=device-width, 
+        initial-scale=1.0, 
+        minimum-scale=1.0, 
+        maximum-scale=5.0, 
+        user-scalable=yes" >
+<meta name="description" content="설명 입력">
+<title>selector</title>
+
+<style>
+    
+    /* 전체 선택자
+    <html>포함 모든 요소에 적용됨.  */
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    /* 타입 선택자 */
+    p {
+        color: red;
+        font-size: 20px;
+    }
+
+    /* id 선택자 
+    스타일링을 위해서는 사용하지 않는다.
+    - 자바스크립트에서 선택 위해
+    - 페이지 내 앵커 스크롤 위해
+    - 서버에서 특정 요소와 데이터를 연결할 때
+    - QA 테스트 코드가 DOM 요소를 식별해야 할 때.*/
+    #header {
+        color: revert;
+    }
+
+    /* 클래스 선택자
+    클래스명은 숫자로 시작할 수 없음 
+    하이픈, 언더바, 문자로 시작 가능 */
+    .class-selector {
+        color: violet;
+    }
+
+    /* 속성 선택자 */
+    [class = 'property-selector'] {
+        color: aqua;
+    }
+    [title] {
+        color: coral;
+    }
+    [title = 'property-selector'] {
+        color: aquamarine;
+    }
+    [class*='bold']{
+        color: blueviolet;
+        font-weight: bold;
+    }
+
+    /* 그룹 선택자 
+    main *은 모든 요소가 선택되기 때문에 p/div/button만 걸러낼 수 없음.
+    즉, 현재 문법에서는 쉼표로 명시적으로 나열하는 것이 유일한 방법이다*/
+    h1, 
+    h2, 
+    h3 {
+        color: lightcoral;
+    }
+
+    
+
+    /* 자손 선택자 */
+    div.descendant-selector div{
+        color: lightblue;
+    }
+    div.descendant-selector p{
+        color: lightpink;
+    }
+
+    /* 자식 선택자 
+        직계 자손만..!*/
+    div.descendant-selector>p{
+        font-weight: bold;
+    }
+
+    /* 일반 형제 선택자
+    뒤에 나오는 형제만 선택
+    앞에 있던 형제를 선택하는 방법은 없다.*/
+    .general-sibling-combinator ~ * {
+        font-style: italic;
+    }
+
+    /* 바로 뒤에 인접한 형제 
+    + 뒤는 반드시 “선택자(selector)”가 와야 한다. 즉, 비워둘 수 없다.
+    태그 종류를 모르면 **반드시 *(universal selector)**를 써야 한다. */
+    .adjacent-sibling-combinator + *{
+        font-weight: bold;
+    }
+
+    /* selector priority 
+    1. 후자 우선의 원칙
+    2. 구체성의 원칙
+        - in-line : 1000점
+        - id : 100점
+        - class : 10점
+        - 타입, 가상요소 : 1점
+        - 전체 선택자 : 0점
+    3. 중요성의 원칙
+        1. !important
+        2. 구체성(Specificity)
+        3. 소스 코드 순서(Cascade
+    */
+
+
+    /* 네이밍 규칙 
+        1. 의미 있는 이름 사용
+            해당 요소의 목적이나 내용을 명확하게 표현
+        2. 축약어 사용 주의
+            보편적인 축약어만 제한적 사용
+        3. 소문자 사용
+            일관성을 위함
+        4. 특수문자 주의
+            문자, 숫자, 하이픈(-)과 언더스코어(_)만 사용
+        5. 숫자로 시작 불가능
+        6. 적절한 이름 길이
+        7. 네이밍 스타일
+            - 케밥
+            - 스네이크
+    */
+    /* 방법론
+        1. BEM (Block Element Modifier)
+            Block, Element:__ , Modifier:--
+            .card
+            .card__title
+            .card__image
+            .card__div
+            .card--featured
+            .card__button--disabled
+        2. OOCSS (Object Oriented CSS)
+            class ="btn btn-primary 
+            .btn
+            .btn-prinmary
+            .btn-second
+        3. SMACSS (Scalable and Modular Architecture for CSS)
+            - Base
+            - Layout
+                .a-header
+                .a-sidebar
+            - Module
+                .nav
+                .nav-item
+            - State
+                .is-active
+                .is-disabled
+            - Theme
+                .theme-dark
+                .theme-light
+    
+     */
+            
+</style>
+</head>
+html section
+<body>
+    <header id="header">
+
+        header
+        <p>header p</p>
+        <p class="class-selector">class-selector1</p>
+        <p class="class-selector">class-selector2</p>
+    </header>
+    <main>
+        <p class="property-selector">property-selector</p>
+        <div class="property-selector">property-selector</div>
+        <p title="">title=""</p>
+        <p title="property-selector">title="property-selector"</p>
+        <p class="bold1">bold1</p>
+        <p class="bold2">bold2</p>
+        <p class="bold3">bold3</p>
+        <hr>
+        <h1 class="group-selector">group-selector h1</h1>
+        <h2 class="group-selector">group-selector h2</h2>
+        <h3 class="group-selector">group-selector h3</h3>
+        <hr>
+        <div class="descendant-selector">
+            <p>1depth p</p>
+            descendant-selector
+            <div class="descendant-selector-child">
+                descendant-selector
+                <p>descendant selector, 2depth p</p>
+                <p class="general-sibling-combinator">descendant selector, 2depth p, general-sibling-combinator: ~</p>
+                <p>p next to .general-sibling </p>
+                <div class="adjacent-sibling-combinator">div next to .general-sibling, adjacent sibling combinator: +</div>
+                <p>p next to adjacent sibling combinator</p>
+            </div>
+            <hr>
+        </div>
+    </main>
+</body>
+</html>

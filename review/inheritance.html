@@ -25,26 +25,39 @@
         border: 3px solid green;
     }
 
-    /* 강제상속 */
+
+    /* 강제상속 
+    강제로 부모값을 따라가라는 지정*/
     .inherit{
         border: inherit;
     }
 
-    /* 각 속성의 초기값으로 */
-    /* CSS 명세서의 초기값으로 간다. */
+    /* 진짜리셋
+    CSS 명세서의 초기값으로 간다.
+     */
     .initial{
         border: initial;
         color: initial;
     }
 
-    /* 규칙에 맞게 */
+/* 질문하기 */
+    /* 상황 따라 자동 분기되는 리셋
+    상속되는 속성일 때: inherit으로 동작
+    상속되지 않는 속성일때: initial과 같이 동작. 
+    상속 여부를 신경쓰지 않고 한번에 reset하고 싶을 때 사용.*/
     .unset{
         border: unset;
     }
 
-    /* 스타일 태그 이전으로 초기화 */
+    /* 덮어쓴 것만 취소하는 롤백 
+    내가 작성한 것만 취소하고, 원해 정해져 있던 값으로 롤백
+    import로 가져온 스타일은 ‘살고’, style 태그 안의 것만 사라진다.
+    revert는 해당 position(속성)에서 “현재 작성된 author-level 선언” 하나만 지운다.
+    
+    한줄 주석처리와 같아보이지만, @layer 참여여부를 결정.
+    */
     .revert{
-        border: revert;
+        border: revert; /* .revert의 border는  */
         color: revert;
     }
 
