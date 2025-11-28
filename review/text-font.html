@@ -4,19 +4,271 @@
 <meta charset="UTF-8" >
 <meta http-equiv="X-UA-Compatible" content="IE=edge" >
 <meta name="viewport" 
-    content="width=device-width, 
-        initial-scale=1.0, 
-        minimum-scale=1.0, 
-        maximum-scale=5.0, 
-        user-scalable=yes" >
+        content="width=device-width, 
+                initial-scale=1.0, 
+                minimum-scale=1.0, 
+                maximum-scale=5.0, 
+                user-scalable=yes" >
 <meta name="description" content="설명 입력">
-<title>text-font</title>
+<title>font</title>
 
-<style>
-    
-</style>
+    <!-- 
+    폰트 임베드
+        1. <link>
+        2. @import
+        3. @font-face
+    => 폰트 사용
+        font-fammily = 
+    -->
+
+<!-- ===================폰트 임베드=================== -->
+
+    <!-- 1. head 내부에 link로 적용하는 방법. CDN에서 가져오는 경우
+    HTML 단계에서 외부 CSS를 즉시 요청. 
+    폰트 로딩에서도 표준 방식, 병렬 로딩 지원 → 빠르다.
+    폰트 로딩 시간이 단축될 수 있고 CSS 파일을 분리하여 관리할 때도 쉽게 적용.
+    스니펫에 넣어 쓰지는 않는다.-->
+
+    <!-- preconnect. 네트워크 연결을 미리 handshake, 지연 시간 단축.
+    HTML parsing 중에 바로 네트워크 요청을 시작 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Nanum+Pen+Script&family=Oswald:wght@300&display=swap" rel="stylesheet">
+
+    <style>
+        /* 2. @import 방식으로 웹폰트 적용하기
+        CSS 파일 안에서 다른 CSS를 뒤이어 불러오는 방식이다.
+        의존성 체인 형성 → 로딩이 느려진다.  과거 IE 시절 편의 기능, 지금은 거의 안 씀.*/
+        @import url('https://fonts.googleapis.com/css2?family=Dongle&family=Nanum+Gothic:wght@400;700;800&family=Nanum+Pen+Script&family=Oswald&display=swap');
+        
+
+        /* 3. @font-face 방식으로 폰트 적용하기
+        폰트페이스에서 정의된 굵기 외엔 수정하지 말자. 브라우져가 강제로 구김.
+        가변 폰트(Variable Font)의 경우에는 하나의 파일로 다양한 굵기를 자유롭게 사용 */
+
+        /*     
+            woff/woff2(Web Open Font Format)
+
+            웹 페이지에서 사용하기 위해 만든 폰트 포맷
+            내부적으로는 사실 ttf/otf를 압축한 형태
+            브라우저가 빠르게 다운로드하도록 설계됨
+            gzip 기반 압축, 메타데이터 포함  
+
+            os, mac 용 TTF/OTF는 너무 무겁다. 
+            웹에 쓰고 싶으면 형식 변환할 것
+                1. woff/woff2로 변환
+                2. 프로젝트 루트 디렉토리 내 fonts 디렉토리에 넣기
+                3. CSS에서 @font-face로 폰트 등록하기
+                4. font-family 속성으로 적용.*/
+
+
+        @font-face {
+            /* 이름 지정 */
+            font-family: 'Suit';
+            /* 외부 폰트를 @font-face + url()로 직접 요청 
+            기능은 같지만, 성능·최적화는 
+            <link rel="preconnect"> +
+            <link rel="stylesheet"> 방식이 더 우월하다*/
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Light.woff2') format('woff2');
+            font-weight: 300;
+            font-display: swap;
+        }
+        
+        @font-face {
+            font-family: "pretendard";
+            /*  사용자가 서버에 올린 폰트를 지정. 폰트 직접 호스팅
+            이렇게 할 경우 @font-face가 절대적으로 우월하다.*/
+            src: url("./fonts/Pretendard-Regular.woff") format("woff");
+            font-weight: 400;
+            font-style: none;
+        }
+        @font-face {
+            font-family: "pretendard";
+            src: url("./fonts/Pretendard-Bold.woff") format("woff");
+            font-weight: 700;
+            font-style: none;
+        }
+
+/* ===================폰트 적용=================== */
+        .nanum{
+            /* font-family 속성을 사용하여 글꼴을 지정 
+
+            font-family: 주 글꼴, 대체 글꼴1, 대체 글꼴2, ..., 일반 글꼴 계열;
+            마지막에는 항상 일반 글꼴 계열을 지정
+
+            따옴표가 없으면 예약된 키워드, 있으면 커스텀 폰트 이름.
+            한글, 영문이지만 공백이 포함될 경우 "" 를 사용.
+            공백 없는 영문도 generic-family가 아니면 따옴표를 쓰는 것이 권장.
+
+            !generic(sans-serif, serif와 같은 기본 폰트, CSS가 기본 제공하는 그룹)
+            인 경우 "" 를 사용하지 않음!
+
+
+            */
+            font-family: "Nanum Pen Script";
+        }
+        .dongle {
+            font-family: "Dongle";
+        }
+        .suit {
+            font-family: "Suit", sans-serif;
+        }
+
+/* =================== font-size =================== */
+
+        /* 
+        font-size: ;
+        keyword는 레거시. ex)x-large
+
+        px: 절대 단위, 화면의 최소 단위인 픽셀 기준
+        em: 현재 요소의 부모 요소에 설정된 글꼴 크기 상대 단위
+        rem: 루트요소(html)에 설정된 글꼴 크기 상대 단위 
+
+        접근성을 위한 최소 폰트 px이 16을 넘도록 한다.
+        
+        대부분의 브라우저 기본 font-size는 16px
+        반응형 웹페이지 개발, 유지보수 등에 용이하기 때문에 em, rem과 같은 상대 단위를 사용
+        계산을 할 때 10 단위가 더 직관적이기 때문에 html의 font-size를 변경하여 주로 사용
+        */
+        html {
+            /* font-size: 10px;
+            브라우저가 강제 조절하지만, 확대 시 깨질 수 있으므로 상대 단위로 초기화 */
+            /* 초기화는 %로 하자. (업계 국제표준)
+            em ->  계산은 되지만 누적 문제 + 비권장
+            rem -> 자기 자신 순환 참조. 절대금지 */
+            
+            font-size: 62.5%;
+
+            /* 초기화 이후 rem 기반 스케일링이 가장 널리 쓰인다. 
+            뷰포트 기반 자동 스케일인 clamp() 기반 fluid typography,
+            정밀 조절용 calc() 조합도 있다.
+            */
+        }
+        .regular {
+            font-family: "pretendard", sans-serif;
+            font-weight: 400;
+        }
+        .bold {
+            font-family: "pretendard", sans-serif;
+            font-weight: 700;
+        }
+
+
+/* =================== font-weight =================== */
+        /* font-weight 키워드는 
+        normal / bold와 같이 아직도 “조금” 쓰이긴 하지만, 결국 400, 700의 alias일 뿐.
+        실무에서는 숫자(weight value) 방식이 사실상 표준이다. 
+        100~900 사이의 weight, 대부분의 폰트는 normal(400)과 bold(700) 만 제공 */
+
+        /* 보통 실무에서 사용되는 방법  */
+        /*
+        body {
+            font-family: "pretendard", sans-serif;
+        }
+        .bold {
+            font-weight: 700;
+        } */
+        
+        .pixel {
+            font-size: 20px;
+        }
+
+        .parent {
+            font-size: 10px;
+        }
+
+        .em {
+            font-size: 2em;
+        }
+
+        .rem {
+            /* 일반적인 브라우져에서 기본 크기가 16px */
+            font-size: 2rem;
+        }
+
+        /* rem을 이용해 특정 크기 정하기 */
+        /* .text{
+            font-size: 0.625rem;
+        } */
+
+        /* 보통 실무에서 사용하는 방법 */
+        html {
+            font-size: 10px;
+        }
+        body {
+            font-size: 10px;
+        }
+        .text {
+            font-size: 1rem;
+        }
+
+/* =================== text-transform =================== */
+        /* 텍스트의 대소문자를 변형하는 데 사용됩니다. 이 속성은 특히 영문 텍스트를 다룰 때 유용
+        
+        none: 변형 방지 (기본값)
+        
+         */
+                .text-transform {
+                /* 모든 글자를 대문자로 */
+                text-transform: uppercase;
+
+                /* 모든 글자를 소문자로 */
+                text-transform: lowercase;
+
+                /* 단어의 첫글자를 대문자로 */
+                text-transform: capitalize;
+        }
+
+        /* 첫번째 글자에만 스타일을 줄 수 있는 가상요소 사용 */
+        /* 인라인 스타일이 못하는 CSS의 장점. */
+        .text-transform::first-letter {
+                font-size: 30px;
+                font-weight: bold;
+                color: red;
+                text-transform: lowercase;
+        }
+
+        /* a 태그에서 주로 사용 */
+        .decoration .line {
+            text-decoration-line: 
+            overline
+            underline
+            line-through;
+            text-decoration-color: blueviolet;
+            text-decoration-thickness: 2px;
+            text-decoration-style: wavy;
+            /* 축약형 */
+            text-decoration: 1px underline blue;
+        }
+
+        .text-shadow {
+            text-shadow: 2px 2px 4px red;
+        }
+    </style>
 </head>
 <body>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, nesciunt odio blanditiis rem vitae ad nulla quas, quisquam, minima facilis recusandae! Dicta deserunt minus voluptate consectetur accusantium voluptatibus quidem aspernatur.</p>
+    <p>Nanum Pen Script 폰트 적용</p>
+    <p class="nanum">Nanum Pen Script 폰트 적용</p>
+    <p class="dongle">Dongle 폰트 적용</p>
+    <p class="suit">폰트 굵기가 진짜 다양하다</p>
+    <p class="regular">Pretendard-Regular</p>
+    <p class="bold">Pretendard-Bold</p>
+
+    <div class="parent">
+        <h2>글꼴의 크기</h2>
+
+        <!-- 픽셀: 절대단위 -->
+        <p class="pixel">픽셀로 적용한 폰트 크기</p>
+        
+
+        <!-- em:상대단위 -->
+        <!-- 부모: 10 => 2em : 20px -->
+        <p class="em">em으로 적용한 부모 기준 상대단위 </p>
+
+        <!-- rem:루트기준 상대단위 -->
+        <p class="rem">rem으로 적용한 루트 기준 상대단위</p>
+
+        <p class="text">rem을 사용해서 10px로 만들어주세요!</p>
+    </div>
 </body>
 </html>

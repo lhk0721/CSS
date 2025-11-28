@@ -55,11 +55,12 @@
         color: aquamarine;
     }
     [class*='bold']{
+        /* class 속성값 안에 bold라는 문자열이 포함된 모든 요소를 선택 */
         color: blueviolet;
         font-weight: bold;
     }
 
-    /* 그룹 선택자 
+    /* 그룹 선택자
     main *은 모든 요소가 선택되기 때문에 p/div/button만 걸러낼 수 없음.
     즉, 현재 문법에서는 쉼표로 명시적으로 나열하는 것이 유일한 방법이다*/
     h1, 
