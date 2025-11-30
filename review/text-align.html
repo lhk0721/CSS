@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+<meta charset="UTF-8" >
+<meta http-equiv="X-UA-Compatible" content="IE=edge" >
+<meta name="viewport" 
+    content="width=device-width, 
+        initial-scale=1.0, 
+        minimum-scale=1.0, 
+        maximum-scale=5.0, 
+        user-scalable=yes" >
+<meta name="description" content="설명 입력">
+<title>Document</title>
+
+<style>
+    section{
+        width: 500px;
+        border: 1px solid black;
+    }
+    
+    /* text-align
+    가로 정렬 설정. 
+    블록 레벨 요소 안 인라인 콘텐츠 정렬 */
+    .text-align1 {
+        span {background-color: lightblue;}
+        /* 기본값 left */
+        text-align: left;
+    }
+    .text-align2 {
+        span {background-color: lightcoral;}
+        /* 우측 정렬 */
+        text-align: right;
+        }
+    .text-align3 {
+        /* 중앙 정렬 */
+        span {background-color: lightcyan;}
+        text-align: center;
+    }
+    .text-align4 {
+        /* 줄 꽉채움 
+        River of white 때문에 권장하지 않음.*/
+        span {background-color: lightgoldenrodyellow;}
+        text-align: justify;
+    }
+    /* vertical align
+    세로 정렬
+    인라인/인라인 블록 요소나 테이블 셀 요소의 수직 정렬을 조정
+    block 요소에는 적용되지 않는다.
+
+    아래 3종류에만 동작한다.
+
+    inline 요소
+    span, a, strong, img 같은 것들
+    텍스트 baseline 기준으로 위/아래 정렬 가능
+
+    inline-block 요소
+    div, p를 inline-block으로 바꾸면 vertical-align 적용됨
+    (이때는 텍스트의 baseline이 아니라 “inline formatting context” 기준)
+
+    table-cell 요소
+    display: table-cell 일 때 vertical-align: middle; 로 완벽한 세로 가운데 정렬 가능
+    모든 실무에서 가장 정확한 vertical-middle 능력
+
+    결론:
+    텍스트에만 국한된 게 아니라, inline-context에 참여하는 모든 요소가 대상이다. */
+        .box1, .box2 {
+        border: solid 2px salmon;
+    }
+    .box1 {
+        text-align: left;
+        text-align: center;
+        text-align: right;
+        text-align: justify;
+    }
+
+    .vertical div:not([class]) {
+        line-height: 2.5;
+        border: 1px dashed gray;
+        margin: 10px;
+    }
+
+    .vertical .box {
+        line-height: 1;
+        background-color: lightgreen;
+        display: inline;
+    }
+    
+    
+</style>
+</head>
+<body>
+    <section>
+    <div class="text-align">
+        <p class="text-align1"><span>Lorem ipsum Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, ab deserunt labore atque, provident qui enim pariatur hic facilis aut rerum consectetur, odio placeat obcaecati doloremque omnis quis. Ducimus, nostrum! dolor sit amet.</span></p>
+        <p class="text-align2"><span>Nesciunt magnam Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque a iure reprehenderit quod debitis molestias quis beatae consequuntur in, ipsam distinctio! Numquam sapiente hic obcaecati vel iste tenetur tempore doloremque? temporibus tempora sunt.</span></p>
+        <p class="text-align3"><span>Labore ex magni Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum asperiores nisi, ex voluptatum voluptates totam culpa tempore nostrum necessitatibus, commodi minus quia veritatis aliquid perferendis eaque ipsa amet vel voluptatem? ut earum.</span></p>
+        <p class="text-align4"><span>Saepe, Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium officia adipisci obcaecati doloremque quaerat, alias nam, molestias ipsum debitis, dignissimos eos tempora autem accusantium rem. Distinctio saepe iste ut ratione? vero. Nemo, magni?</span></p>
+    </div>
+    
+    </section>
+    <div class="box1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea possimus ut laudantium maiores tempora dolor eveniet soluta beatae asperiores, fugiat provident maxime ab neque quos quisquam laborum consequuntur hic dolores.</div>
+
+    <div class="box2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi quos illo consectetur iste ipsam eum repellat facere sunt, autem deleniti ratione facilis praesentium, enim quidem similique vero optio blanditiis aliquid.</div>
+
+    <div class="vertical">
+        <div>
+            부모요소
+            <div class="box baseline">baseline</div>
+        </div>
+        <div>
+            부모요소
+            <span style="font-size: 40px">큰 글자</span>
+            <span style="font-size: 20px">중간 글자</span>
+            <div class="box top">top</div>
+        </div>
+        <div>
+            부모요소
+            <div class="box middle">middle</div>
+        </div>
+        <div>
+            부모요소
+            <div class="box bottom">bottom</div>
+        </div>
+        <div>
+            부모요소
+            <span style="font-size: 40px">큰 글자</span>
+            <div class="box text-top">text-top</div>
+        </div>
+        <div>
+            부모요소
+            <div class="box text-bottom">text-btm</div>
+        </div>
+
+        <div>
+            부모요소
+            <div class="box baseline">baseline</div>
+            <div class="box top">top</div>
+            <div class="box middle">middle</div>
+            <div class="box bottom">bottom</div>
+            <div class="box text-top">text-top</div>
+            <div class="box text-bottom">text-btm</div>
+        </div>
+    </div>
+</body>
+</html>
