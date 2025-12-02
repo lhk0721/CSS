@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+<meta charset="UTF-8" >
+<meta http-equiv="X-UA-Compatible" content="IE=edge" >
+<meta name="viewport" 
+    content="width=device-width, 
+        initial-scale=1.0, 
+        minimum-scale=1.0, 
+        maximum-scale=5.0, 
+        user-scalable=yes" >
+<meta name="description" content="설명 입력">
+<title>flex</title>
+
+<style>
+/*     
+    1) space-between
+    |A      B      C|
+    2) space-around
+    |  A    B    C  |
+    3) space-evenly
+    |   A   B   C   |
+ */
+
+
+    .container{
+        background-color: #eee;
+
+            .item{
+                width: 100px;
+                height: 100px;
+                font-size: 32px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .item:nth-child(odd){
+            background-color: lightblue;
+            }
+            .item:nth-child(even){
+                background-color: lightcoral;
+            }
+    }
+
+    .row{
+        padding: 200px;
+        height: 400px;
+        background-color: lightslategray;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+    }
+    .row-flex-start {
+        /* flex는 부모 요소에 설정. */
+        display: flex;
+
+        /* 주축 방향 설정 -> 주축 기준 정렬 */
+        flex-direction: row; /*기본값*/
+        justify-content: flex-start;
+    }
+
+    .row-center{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .row-flex-end{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+
+
+    .col{
+        padding: 200px;
+        height:max-content;
+        height: 200px;
+        background-color: lightgray;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .col-flex-start{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .col-center {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .col-flex-end {
+        display: flex;
+        flex-direction: column;
+        justify-content:flex-end;
+    }
+
+    .wrap > div {
+                color: white;
+                line-height: 70px;
+                text-align: center;
+                font-size: 20px;
+                width: 70px;
+                height: 70px;
+            }
+
+    .blue {
+        background-color: #4967d8;
+    }
+
+    .wrap {
+        background-color: gainsboro;
+        width: 240px;
+        height: 240px;
+        display: flex;
+        
+        /* 1 */
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+
+        /* 2 */
+        flex-direction: row-reverse;
+        justify-content: flex-start;
+        align-items: center;
+
+        /* 3 */
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+
+        /* 4 */
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: flex-end;
+
+        /* 5 */
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-end;
+        
+        /* 6 */
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: flex-end;
+    }   
+
+    
+
+    
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="row-flex-start">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+                <div class="item">4</div>
+                <div class="item">5</div>
+                <div class="item">6</div>
+                <div class="item">7</div>
+                <div class="item">8</div>
+            </div>
+            <div class="row-center">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+                <div class="item">4</div>
+                <div class="item">5</div>
+                <div class="item">6</div>
+                <div class="item">7</div>
+                <div class="item">8</div>
+            </div>
+            <div class="row-flex-end">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+                <div class="item">4</div>
+                <div class="item">5</div>
+                <div class="item">6</div>
+                <div class="item">7</div>
+                <div class="item">8</div>
+            </div>
+        </div>
+        
+        <div class="col">
+            <div class="col-flex-start">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+                <div class="item">4</div>
+                <div class="item">5</div>
+                <div class="item">6</div>
+                <div class="item">7</div>
+                <div class="item">8</div>
+            </div>
+            <div class="col-center">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+                <div class="item">4</div>
+                <div class="item">5</div>
+                <div class="item">6</div>
+                <div class="item">7</div>
+                <div class="item">8</div>
+            </div>
+            <div class="col-flex-end">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+                <div class="item">4</div>
+                <div class="item">5</div>
+                <div class="item">6</div>
+                <div class="item">7</div>
+                <div class="item">8</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="wrap">
+            <div class="blue">A</div>
+    </div>
+</body>
+</html>
