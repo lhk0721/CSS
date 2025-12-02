@@ -1,0 +1,94 @@
+<!-- align-items: stretch; -->
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+<meta charset="UTF-8" >
+<meta http-equiv="X-UA-Compatible" content="IE=edge" >
+<meta name="viewport" 
+    content="width=device-width, 
+        initial-scale=1.0, 
+        minimum-scale=1.0, 
+        maximum-scale=5.0, 
+        user-scalable=yes" >
+<meta name="description" content="설명 입력">
+<title>Document</title>
+
+<style>
+    .container {
+        height: 100vh;
+        background-color: #eee;
+
+        /* flex 적용방법 
+        부모 요소에 작성
+            주축: flex-direction이 결정하는 베인 방향
+            교차축: 주축에 수직인 방향*/
+        display: flex;
+
+        /* 주 축의 방향을 설정 */
+        flex-direction: row; /*기본값. 왼쪽에서 오른쪽(웹의 기본 읽기 방향)*/
+        flex-direction: column; /*세로. 모바일 UI에서 자주 사용.*/
+        flex-direction: row-reverse; /* row인데 오른쪽에서 왼쪽 (아랍어)*/
+        flex-direction: column-reverse; /*col인데 아래에서 위쪽 (댓글 시스템, 시스템UI)*/
+        
+        flex-direction: row;
+
+        /* 주축을 기준으로 하는 정렬 */
+        justify-content: flex-start; /*시작점에 정렬*/
+        justify-content: flex-end; /*끝점에 정렬*/
+        justify-content: center; /*주축 기준 가운데 정렬*/
+
+        justify-content: space-between; /*양끝은 딱 붙이고 아이템 사이만 균등*/
+        justify-content: space-around; /*모든 아이템 주변에 똑같은 여백 말단은 변동*/
+        justify-content: space-evenly; /*모든 간격이 동일*/
+        
+        justify-content: flex-start;
+
+        /* 교차축 기준 정렬 
+        */
+        align-items: stretch; /* 기본값. 교차축 기준 아이템 크기가 지정되어있지 않은 경우 교차축을 채우기 위해 아이템을 늘림. */
+        align-items: flex-start; /*시작점에 정렬*/
+        align-items: flex-end;
+        align-items: center;
+        
+        
+        
+
+    }
+
+    .item {
+        width: 100px;
+        /* height: 100px; */
+        font-size: 32px;
+        /* text-align: center;
+        line-height: 100px; */
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .item:nth-child(odd){
+        background-color: lightcoral;
+    }
+
+    .item:nth-child(even){
+        background-color: lightgreen;
+    }
+
+
+
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <!-- <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div> -->
+    </div>
+</body>
+</html>
