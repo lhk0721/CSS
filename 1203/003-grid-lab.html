@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+<meta charset="UTF-8" >
+<meta http-equiv="X-UA-Compatible" content="IE=edge" >
+<meta name="viewport" 
+    content="width=device-width, 
+        initial-scale=1.0, 
+        minimum-scale=1.0, 
+        maximum-scale=5.0, 
+        user-scalable=yes" >
+<meta name="description" content="설명 입력">
+<title>Document</title>
+
+<style>
+
+
+    .container1{
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(auto-fill, 100px);
+        justify-content: center;
+    }
+
+    .container1 .item {
+        width: 100px;
+        height: 100px;
+
+        background-color: lightblue;
+        display: grid;
+        justify-content: center;
+        align-content: center;
+    }
+
+    .container2{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 2fr 3fr;
+        gap: 5px;
+    }
+
+    .container2 .item{
+        background-color: lightgreen;
+        display: grid;
+        justify-content: center;
+        align-content: center;
+    }
+
+</style>
+</head>
+<body>
+    <!-- 자동으로 열 방향 트랙을 설정, 수평 방향으로 가운데 정렬 -->
+    <div class="container1">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+        <div class="item">10</div>
+        <div class="item">11</div>
+        <div class="item">12</div>
+    </div>
+    <!-- 자식 요소의 열방향 사이즈는 동일한 비율 -->
+    <!-- 각 행의 높이는 1: 2: 3의 비율 -->
+    <div class="container2">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+        
+    </div>
+</body>
+</html>
