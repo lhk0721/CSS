@@ -1,0 +1,101 @@
+<!-- background:url(images/check-box-fill.png)no-repeat center /cover; -->
+<!-- .state-check-input + .icon -->
+
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+<meta charset="UTF-8" >
+<meta http-equiv="X-UA-Compatible" content="IE=edge" >
+<meta name="viewport" 
+    content="width=device-width, 
+        initial-scale=1.0, 
+        minimum-scale=1.0, 
+        maximum-scale=5.0, 
+        user-scalable=yes" >
+<meta name="description" content="설명 입력">
+<title>Document</title>
+
+<style>
+    .focus-btn:focus{
+        background-color: lightblue;
+    }
+    .focus-visible-btn:focus-visible{
+        /* 키보드나 스크립트를 사용해 포커스 되었을 때 활성화. 
+        마우스, 터치 인터페이스에서는 비활성화
+        사용자 경험과 웹접근성을 동시에 개선한다.*/
+        background-color: lightcoral;
+    }
+    .login-form{
+        border: solid 1px black;
+        margin: 20px auto;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .login-form:focus-within{
+        /* 자신 이하에 포커스가 들어오면 활성화가 됨. */
+        background-color: lavender;
+    }
+    .login-btn:enabled{
+        background-color: lightgreen;
+    }
+
+    /* 비활성화된 폼 요소를 선택 */
+    .login-btn:disabled{
+        /* 시각적으로 구분을 줘야 함. */
+        background-color: #eee;
+        color: #888;
+        /* 사용할 수 없는 상태임을 명시 */
+        cursor: not-allowed;
+    }
+
+    label:has(+ input:required){
+        &::after{
+            color: red;
+            content: '*';
+        }
+    }
+
+    /* 커스텀 체크박스 */
+    /* 1.input 요소 숨김처리 */
+    /* 2. input의 형제요소 span에 아이콘 넣어주기 */
+    .state-check-input{
+        display: none;
+    }
+    .state-check-input + .icon{
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        border: 1px solid black;
+        background: url(./images/check-box.png) no-repeat center/cover;
+        border: none;
+    }
+    .state-check-input:checked + .icon{
+        background:url(images/check-box-fill.png)no-repeat center /cover;
+    }
+
+    
+
+</style>
+</head>
+<body>
+    <button class="focus-btn">focus 버튼</button>
+    <button class="focus-visible-btn">focus-visible</button>
+    <h2>로그인</h2>
+    <form action="" class="login-form">
+        <label for="email">이메일</label>
+        <input type="text" name="email" id="email" required>
+
+        <label for="state-check">
+            <input type="checkbox" name="state-check" id="state-check" class="state-check-input">
+            <span class="icon"></span>
+            로그인 상태 유지
+        </label>
+
+        <!-- disabled는 사용 불가 상태 -->
+        <button type="button" class="login-btn">로그인</button>
+        <button type="button" class="login-btn" disabled>로그인</button>
+    </form>
+</body>
+</html>

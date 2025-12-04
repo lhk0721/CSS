@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+<meta charset="UTF-8" >
+<meta http-equiv="X-UA-Compatible" content="IE=edge" >
+<meta name="viewport" 
+    content="width=device-width, 
+        initial-scale=1.0, 
+        minimum-scale=1.0, 
+        maximum-scale=5.0, 
+        user-scalable=yes" >
+<meta name="description" content="설명 입력">
+<title>Document</title>
+
+<style>
+    /* 해당 속성이 있는지 */
+    [title]{
+        color: red;
+    }
+
+    [class]{
+        font-weight: bold;
+    }
+    
+    /* 해당 속성에 해당 값이 있는지 
+    전체 값이 동일해야 함.*/
+    [title='hello']{
+        border: solid 1px blue;
+    }
+    
+    [title='hello world']{
+        border: solid 1px red;
+    }
+
+    /* ~= '공백'으로 구분된 값 중에 일치하는 게 있는지 */
+    [class ~= btn] {
+        background-color: lightcoral;
+    }
+
+    /* 값이 정확히 일치하거나, 값이 그 단어로 시작하고 바로 뒤에 하이픈(-)이 붙는 경우 */
+    [class |= 'btn']{
+        padding: 10px;
+    }
+
+    /* 이걸로 시작하는지 */
+    [class ^='btn']{
+        color: lightpink;
+    }
+
+    /* 이걸로 끝나는지 */
+    [class$='btn']{
+        color: lightgreen;
+    }
+
+    [class *= "warning"]{
+        border-radius: 50%;
+    }
+
+</style>
+</head>
+<body>
+    <p title="hello">Hello world</p>
+    <p title="hello world">Hello world</p>
+    <p class="text">Hello world</p>
+    <button class="btn-primary">1. btn-primary</button>
+    <button class="secondary-btn">2. secondary-btn</button>
+    <button class="btn warning">3.btn-warning</button>
+    <button class="btn-red">4. btn-red</button>
+    <button class="btn">5. button</button>
+</body>
+</html>

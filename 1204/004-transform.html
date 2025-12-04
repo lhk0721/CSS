@@ -1,0 +1,125 @@
+<!-- position_absolute -->
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+<meta charset="UTF-8" >
+<meta http-equiv="X-UA-Compatible" content="IE=edge" >
+<meta name="viewport" 
+    content="width=device-width, 
+        initial-scale=1.0, 
+        minimum-scale=1.0, 
+        maximum-scale=5.0, 
+        user-scalable=yes" >
+<meta name="description" content="설명 입력">
+<title>Document</title>
+
+<style>
+    .container {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        margin-top: 100px;
+    }
+
+    .item {
+        width: 150px;
+        height: 150px;
+        background-color: lightgray;
+
+        font-size: 32px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    /* ====다른 요소에 영향 주지 않고 시각적으로만 변화==== */
+
+    /* 이동 */
+    .item:nth-child(1):hover{
+        background-color: lavender;
+        /* 현재 위치에서 지정된 거리만큼 이동 */
+        /* (width,height), %는 자기 자신의 크기 기준. */
+        transform: translate(50px,-20px);
+        /* x/y축으로만 이동 */
+        transform: translateX(100px);
+        transform: translateY(100px);
+        
+        
+        /* transform의 기준점은 모두 정중앙. 기준점 바꾸고 싶으면 transform-origin 사용
+        키워드, %, px 가능.*/
+        transform-origin:top left;
+    }
+
+    /* 크기 조절 */
+    .item:nth-child(2):hover{
+        background-color: aquamarine;
+        /* 1보다 크면 확대, 1보다 작으면 축소 */
+        
+        /* 기본값:1 안에 내용물도 영향 받는다.*/
+        transform: scale(0.5);
+        transform: scale(1,2);
+        transform: scale(0);
+        transform: scale(-1); /*거울상*/
+        transform: scaleX(2);
+        transform: scaleY(2);
+    }
+
+    .item:nth-child(3):hover{
+        background-color: yellowgreen;
+        /* 양수는 시계, 음수는 반시계방향 */
+        transform: rotate(45deg);
+        transform: rotate(-45deg);
+        /* 시계 방향 반바퀴 회전 */
+        transform: rotate(0.5turn);
+        transform-origin:top left;
+    }
+
+    .item:nth-child(4):hover{
+        /* 기울기 콘텐츠도 영향 받으니 적당히 사용해야 함.*/
+        background-color: lightgoldenrodyellow;
+        /* 하나의 값만 넣었을 때는 x축으로 */
+        transform: skew(30deg);
+        transform: skew(20deg, 30deg);
+        transform: skewX(30deg);
+        transform: skewY(30deg);
+        /* skewX,skewY에 두개 넣는 것은 예측 불가능한 오류 야기할 수 있으니 자제할 것. */
+    }
+    
+    .absolute{
+        width: 300px;
+        height: 300px;
+        background-color: #eee;
+        margin: 20px auto;
+        position: relative;
+    }
+
+    /* position + translate를 활용한 정중앙 정렬 */
+    .child {
+        width: 100px;
+        height: 100px;
+        background-color: lightcoral;
+        position: absolute;
+
+        /* 부모 요소 크기 기준으로 중앙시작 %를 배치 */
+        top: 50%;
+        left: 50%;
+        /* 정중앙 정렬 효과 */
+        transform: translate(-50%,-50%);
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">이동</div>
+        <div class="item">크기조절</div>
+        <div class="item">회전</div>
+        <div class="item">기울이기</div>
+        <div class="item">전체</div>
+
+        <div class="absolute">
+            <div class="child"></div>
+        </div>
+    </div>
+</body>
+</html>
