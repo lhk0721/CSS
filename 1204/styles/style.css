@@ -1,1 +1,17 @@
-@import url(./reset.css);
+body {
+    background-color: lightgray;
+    font-family: ;
+}
+
+.container {
+    width: 350px;
+    height: 140px;
+    background-color: #eee;
+    border-radius: 5px;
+    border: solid #DBDBDB 1px;
+    display: grid;
+    padding: 18px 16px;
+}
+
+
+

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+<meta charset="UTF-8" >
+<meta http-equiv="X-UA-Compatible" content="IE=edge" >
+<meta name="viewport" 
+    content="width=device-width, 
+        initial-scale=1.0, 
+        minimum-scale=1.0, 
+        maximum-scale=5.0, 
+        user-scalable=yes" >
+<meta name="description" content="설명 입력">
+<title>Document</title>
+
+<style>
+    /* 이미지 크기: 1176 x 340 */
+    .licat{
+        width: 168px;
+        height: 200px;
+        margin: 100px auto;
+        background-color: orange;
+        background: url(./images/rycat.png) no-repeat top left / auto 100%;
+        animation: move-licat 0.6s steps(6) infinite;
+
+    }
+    @keyframes move-licat {
+        0%{
+            background-position: top right;
+        }
+        100%{
+            background-position: top left;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="licat"></div>
+</body>
+</html>

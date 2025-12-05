@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+<meta charset="UTF-8" >
+<meta http-equiv="X-UA-Compatible" content="IE=edge" >
+<meta name="viewport" 
+    content="width=device-width, 
+        initial-scale=1.0, 
+        minimum-scale=1.0, 
+        maximum-scale=5.0, 
+        user-scalable=yes" >
+<meta name="description" content="설명 입력">
+<title>Document</title>
+
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .container{
+        background-color: lightblue;
+        width: 400px;
+        /* 화면 크기에 다라 유동적인 크기 설정 */
+        /* calc() 
+        px, %, em, rem 등등의 단위를 자유롭게 사용 가능 
+        연산자는 좌우에 공백을 넣어주자. */
+        width: calc(100% - 32px);
+        margin: auto;
+        /* 여러 옵션 중 최솟값, 최댓값 선택 */
+        width: min(50%, 600px);
+        width: max(50%, 600px);
+        /* 반응형 컨테이너 */
+        width: min(1200px, 100%);
+        /* 최솟값, 선호값, 최대값 */
+        /* 최솟값과 최댓값 내에선 선호값을 사용한다. */
+        width: clamp(300px, 50%, 800px);
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae praesentium alias beatae qui sed, vitae inventore nam autem dolore, ratione deleniti similique, molestias voluptas voluptatibus. Ex animi itaque laboriosam numquam?</span>
+    </div>
+    <ul class="lang-list">
+        <!-- 각 li가 한줄에(3개의 열) 위치하도록 배치하되 최소 너비를 200px로 유지 -->
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>
+</body>
+</html>
